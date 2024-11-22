@@ -7,7 +7,8 @@
     <title>GTRX - We're all GRUM</title>
     <meta name="description" content="A degenerate monkey with anger issues." />
     <link rel="icon" href="/assets/img/favicon.png" type="image/x-icon" sizes="16x16" />
-    <link rel="preload" href="/assets/font/Sour_Gummy/static/SourGummy-Black.ttf" as="font" crossorigin type="font/ttf" />
+    <link rel="preload" href="/assets/font/Sour_Gummy/static/SourGummy-Black.ttf" as="font" crossorigin
+        type="font/ttf" />
     <link rel="preload" href="/assets/font/Lacquer/Lacquer-Regular.ttf" as="font" crossorigin type="font/ttf" />
     <link rel="stylesheet" href="/css/styles.min.css" />
     <script>
@@ -245,14 +246,52 @@
                 </div>
                 <a href="#" target="_blank" class="socials__action-link"></a>
                 <p>$GTRX IS A SHITCOIN WITH NO GUARANTEED FINANCIAL RETURNS.<br> INVEST AT YOUR OWN RISK !</p>
-            </div> 
-            <img src="/assets/img/moto.svg" alt="Moto" class="socials__section-image"/> 
+            </div>
+            <img src="/assets/img/moto.svg" alt="Moto" class="socials__section-image" />
         </section>
 
         <footer class="socials__footer-link">
             <a href="/templates/rednote.html" class="rednote">REDNOTE</a>
         </footer>
     </main>
+
+    <a href="#" class="back-to-top" aria-label="Retour en haut">
+
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M5 11L12 4L19 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </a>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const backToTopButton = document.querySelector('.back-to-top');
+    
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+    
+            backToTopButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                backToTopButton.classList.add('clicked');
+    
+                window.addEventListener('scroll', function onScroll() {
+                    if (window.scrollY === 0) {
+                        backToTopButton.classList.remove('clicked');
+                        window.removeEventListener('scroll', onScroll);
+                    }
+                });
+            });
+        });
+    </script>
     <script src="/js/script.min.js" async crossorigin></script>
 </body>
 
