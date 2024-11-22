@@ -55,7 +55,6 @@
     --transition-speed: 0.3s;
 }
 
-/* Réinitialisation */
 *,
 *::before,
 *::after {
@@ -80,7 +79,7 @@ body {
 .grum-title {
     font-family: var(--font-primary);
     font-size: var(--font-size-h1);
-    margin: 4em 0 10px 0;
+    margin: 2.5em 0 10px 0;
     color: var(--text-color);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -363,8 +362,7 @@ button:hover:not(:disabled) {
     }
 
     .grum-title {
-        font-size: 3em;
-        margin-top: 6em;
+        font-size: 5em;
     }
 
     .fa-arrow-left {
@@ -402,7 +400,7 @@ button:hover:not(:disabled) {
 /* Small Devices (481px to 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
     .grum-title {
-        font-size: 4em;
+        font-size: 6em;
     }
 
     .main-title {
@@ -520,8 +518,8 @@ button:hover:not(:disabled) {
 /* Extra Large Devices (1201px to 1600px) */
 @media (min-width: 1201px) and (max-width: 1600px) {
     .grum-title {
-        font-size: 7em;
-        margin-top: 3em;
+        font-size: 8em;
+        margin-top: 2em;
     }
 
     .socials__title {
