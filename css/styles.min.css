@@ -1,5 +1,3 @@
-/* Importation des Polices Personnalisées */
-/* Lacquer Font */
 @font-face {
     font-family: 'Lacquer';
     src: url('/assets/font/Lacquer/Lacquer-Regular.ttf') format('truetype');
@@ -8,7 +6,6 @@
     font-display: swap;
 }
 
-/* Sour Gummy Paint Font */
 @font-face {
     font-family: 'Sour_Gummy';
     src: url('/assets/font/Sour_Gummy/static/SourGummy-Black.ttf') format('truetype');
@@ -17,10 +14,8 @@
     font-display: swap;
 }
 
-/* Roboto Font for Enhanced Typography */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* Définition des Variables CSS */
 :root {
     --primary-color: #E31828;
     --secondary-color: #333333;
@@ -38,7 +33,6 @@
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Réinitialisation et Base */
 *, *::before, *::after {
     box-sizing: border-box;
     transition: all var(--transition-speed) ease-out;
@@ -102,6 +96,8 @@ p,
     color: var(--text-color);
     font-family: var(--font-secondary);
     margin-bottom: 1em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .highlight {
@@ -117,7 +113,6 @@ p,
     overflow: hidden;
 }
 
-/* Header avec arrière-plan et ombre améliorés */
 .header {
     background: linear-gradient(90deg, rgba(28,28,28,0.8), rgba(0,0,0,0.8));
     backdrop-filter: blur(10px);
@@ -153,10 +148,7 @@ p,
     text-align: center;
     border-radius: 30px;
     font-size: 1em;
-    transition: background var(--transition-speed),
-                border-color var(--transition-speed),
-                color var(--transition-speed),
-                transform var(--transition-speed);
+    transition: background var(--transition-speed), border-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
     display: inline-block;
     box-shadow: var(--box-shadow);
 }
@@ -168,7 +160,6 @@ p,
     transform: translateY(-2px);
 }
 
-/* Boutons avec styles améliorés */
 button,
 a button {
     padding: 0.75em 1.5em;
@@ -177,9 +168,7 @@ a button {
     border-radius: 30px;
     background: var(--button-bg);
     color: var(--button-text);
-    transition: background var(--transition-speed),
-                transform var(--transition-speed),
-                box-shadow var(--transition-speed);
+    transition: background var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
     display: inline-block;
     margin: 0.625em auto;
     text-decoration: none;
@@ -195,7 +184,6 @@ a button:hover {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-/* Boutons spécifiques avec animations */
 .hero__button,
 .utilities__button,
 .buy-section__button,
@@ -254,7 +242,6 @@ a button:hover {
     animation: none;
 }
 
-/* Section Hero améliorée */
 .hero {
     position: relative;
     text-align: center;
@@ -344,7 +331,6 @@ a button:hover {
     transform: scale(1.2);
 }
 
-/* Marquee améliorée */
 .hero__marquee {
     background-color: var(--secondary-color);
     color: var(--text-color);
@@ -372,11 +358,6 @@ a button:hover {
     font-weight: bold;
     color: var(--accent-color);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-}
-
-/* Sections avec styles améliorés */
-section + section {
-    border-top: 5px solid var(--secondary-color);
 }
 
 .exchanges {
@@ -448,27 +429,6 @@ section + section {
     align-items: center;
 }
 
-/* Custom cursor for Exchanges section (Desktop only) */
-@media (hover: hover) and (pointer: fine) {
-    /* Cible la section avec l'ID 'exchanges' */
-    #exchanges {
-        cursor: url('/assets/img/cursor.png') 16 16, auto;
-    }
-}
-
-/* Feedback visuel pour les appareils tactiles dans la section Exchanges */
-@media (hover: none) and (pointer: coarse) {
-    #exchanges a {
-        /* Ajouter un effet de surbrillance au toucher */
-        transition: background-color 0.3s ease;
-    }
-
-    #exchanges a:active {
-        background-color: rgba(255, 0, 0, 0.2);
-    }
-}
-
-/* Section Utilities avec couleurs ajustées */
 .utilities {
     text-align: center;
     padding: 4em 0;
@@ -527,11 +487,12 @@ section + section {
 }
 
 .utilities__card-description {
-    font-size: 1.2em;
     margin-bottom: 1.5em;
     transition: font-size var(--transition-speed) ease-out;
     color: var(--secondary-color);
     font-family: var(--font-secondary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .utilities-container {
@@ -554,7 +515,6 @@ section + section {
     transform: scale(1.05);
 }
 
-/* Buy Section */
 .buy-section {
     background-color: var(--secondary-color);
     text-align: center;
@@ -637,7 +597,6 @@ section + section {
 
 .buy-section__image {
     margin: 0 auto;
-    max-width: 70%;
     height: auto;
     border-radius: 15px;
     margin-top: 2em;
@@ -648,11 +607,9 @@ section + section {
     transform: scale(1.05);
 }
 
-/* Section Pact améliorée */
 .pact-section {
     text-align: center;
     background-color: #FFFFFF;
-    border-top: 5px solid var(--secondary-color);
     width: 100%;
     color: var(--secondary-color);
 }
@@ -709,7 +666,6 @@ section + section {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-/* Section Tokenomics améliorée */
 .tokenomics {
     text-align: center;
     background-color: var(--secondary-color);
@@ -790,7 +746,7 @@ section + section {
 }
 
 .tokenomics__detail {
-    background-color: #ffffff25;
+    background-color: rgba(255, 255, 255, 0.15);
     color: var(--text-color);
     padding: 2em;
     border-radius: 10px;
@@ -821,6 +777,8 @@ section + section {
     font-size: 1.2em;
     transition: font-size var(--transition-speed) ease-out;
     font-family: var(--font-secondary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .tokenomics__buy-link {
@@ -860,11 +818,11 @@ section + section {
     box-shadow: var(--box-shadow);
 }
 
-/* Section Socials améliorée */
 .socials {
     text-align: center;
     background-color: var(--primary-color);
-    padding: 4em 0;
+    padding-top: 4em;
+    padding-bottom: 0;
     width: 100%;
     overflow: hidden;
     color: var(--text-color);
@@ -926,6 +884,14 @@ section + section {
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
+.socials__section-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 60px;
+}
+
 .socials__additional-image {
     position: fixed;
     bottom: 80px;
@@ -942,7 +908,6 @@ section + section {
     box-shadow: var(--box-shadow);
 }
 
-/* Pied de page */
 footer.socials__footer-link {
     z-index: 9999;
     display: flex;
@@ -959,6 +924,7 @@ footer.socials__footer-link {
     overflow: hidden;
     font-family: var(--font-secondary);
     box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    margin-top: 0;
 }
 
 footer.socials__footer-link a.rednote {
@@ -984,10 +950,9 @@ footer.socials__footer-link a.rednote:hover {
 .fade-in-element.is-visible {
     opacity: 1;
     transform: translateY(0);
-    animation: fadeInElastic 0.6s forwards;
+    animation: fadeIn 0.6s forwards;
 }
 
-/* Keyframes */
 @keyframes shake-rotate {
     0%, 100% {
         transform: rotate(0deg);
@@ -1115,24 +1080,48 @@ footer.socials__footer-link a.rednote:hover {
     }
 }
 
-@keyframes fadeInElastic {
-    0% {
+@keyframes fadeIn {
+    from {
         opacity: 0;
-        transform: translateY(20px) scale(0.95);
+        transform: translateY(20px);
     }
-    60% {
+    to {
         opacity: 1;
-        transform: translateY(-5px) scale(1.05);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
     }
 }
 
-/* Styles Responsives */
+@keyframes fadeInElastic {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-/* Mobile: max-width 320px */
+@media (hover: hover) and (pointer: fine) {
+    #exchanges {
+        cursor: url('/assets/img/cursor.png') 16 16, auto;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    #exchanges a {
+        transition: background-color 0.3s ease;
+    }
+
+    #exchanges a:active {
+        background-color: rgba(255, 0, 0, 0.2);
+    }
+}
+
 @media (max-width: 320px) {
     footer.socials__footer-link {
         flex-direction: column;
@@ -1153,6 +1142,10 @@ footer.socials__footer-link a.rednote:hover {
     h1, h2, h3 {
         font-size: 1.5em;
         margin-bottom: 0.4em;
+    }
+
+    .header__nav {
+        height: 6em;
     }
 
     .header__logo img {
@@ -1193,7 +1186,7 @@ footer.socials__footer-link a.rednote:hover {
     }
 
     .utilities__card-title {
-        font-size:0.7em;
+        font-size: 0.7em;
     }
 
     .utilities__button {
@@ -1250,9 +1243,16 @@ footer.socials__footer-link a.rednote:hover {
         max-width: 100%;
         padding: 0 0.5em;
     }
+
+    .socials__section-image {
+        display: block;
+        margin: 0 auto;
+        max-width: 50%;
+        height: auto;
+        margin-bottom: 40px;
+    }
 }
 
-/* Petits à Moyens Appareils: 321px à 559px */
 @media (max-width: 559px) and (min-width: 321px) {
     .header__nav {
         height: 10vh;
@@ -1375,7 +1375,6 @@ footer.socials__footer-link a.rednote:hover {
     }
 }
 
-/* Appareils Moyens: 560px à 1199px */
 @media (min-width: 560px) and (max-width: 1199px) {
     h1 {
         font-size: 3em;
@@ -1447,6 +1446,10 @@ footer.socials__footer-link a.rednote:hover {
         font-size: 1.2em;
     }
 
+    .buy-section__image {
+        width: 50em;
+    }
+
     .exchanges__link {
         width: 100%;
         max-width: 300px;
@@ -1489,53 +1492,87 @@ footer.socials__footer-link a.rednote:hover {
 
     .tokenomics__title {
         font-size: 5em;
+        font-family: var(--font-primary);
     }
 
-    .tokenomics__detail-title{
-        color: var(--primary-color);
-    }
-
-    .tokenomics__detail-info {
-        font-size: 1em;
+    .exchanges__description,
+    .listings-p {
+        font-size: 3rem;
         font-family: var(--font-secondary);
     }
 
-    .tokenomics__button {
-        margin-top: 2em;
-        margin-bottom: 4em;
+    .buy-section__step-number {
+        font-size: 3em;  
+    }
+
+    .buy-section__step-title {
+        font-size: 2em;
+    }
+
+    .buy__p {
+        font-size: 1.7em;
+    }
+
+    .utilities__description,
+    .buy-section__description,
+    .pact-section__description,
+    .tokenomics__description {
+        font-size: 2.5em;
+        margin-bottom: 3em;
         font-family: var(--font-secondary);
     }
 
-    .socials__title {
-        font-size: 5em;
-        font-family: var(--font-secondary);
-    }
-
-    .socials__description {
+    .marquee__content span {
+        margin-right: 3.75em;
         font-size: 2em;
         font-family: var(--font-secondary);
     }
 
-    .socials__links {
-        flex-direction: column;
-        align-items: center;
+    .tokenomics__detail {
+        font-size: 2em;
+        font-family: var(--font-secondary);
+    }
+
+    .tokenomics__button {
+        font-size: 3em;
+        font-family: var(--font-secondary);
+        margin-bottom: 2em;
+    }
+
+    .tokenomics__additional-image {
+        max-width: 100%;
+    }
+
+    .pact-section__image {
+        margin-top: -10em;
+    }
+
+    .socials__title {
+        font-size: 5em;
+        font-family: var(--font-primary);
+    }
+
+    .socials__description {
         font-size: 3em;
         font-family: var(--font-secondary);
     }
 
-    .tokenomics__detail {
-        font-size: 1.2em;
+    .socials p {
+        font-size: 2em;
+    }
+
+    .socials__links {
+        font-size: 3em;
         font-family: var(--font-secondary);
     }
 }
 
-@media  (min-width: 850px) {
+@media (min-width: 850px) {
     .artwork-container {
         display: none;
     }
 }
 
-/* Grands Appareils: 1200px à 1599px */
 @media (min-width: 1200px) and (max-width: 1599px) {
     .header__nav {
         height: 20vh;
@@ -1574,7 +1611,6 @@ footer.socials__footer-link a.rednote:hover {
 
     .exchanges__title {
         font-size: 5em;
-        margin-top: 1em;
         font-family: var(--font-primary);
     }
 
@@ -1599,7 +1635,7 @@ footer.socials__footer-link a.rednote:hover {
         justify-content: center; 
         align-items: center;
     }
-    
+
     .exchanges__link {
         width: 500px;
         display: block;
@@ -1626,14 +1662,42 @@ footer.socials__footer-link a.rednote:hover {
         font-size: 1.5em;
     }
 
-    .marquee__content span {
-        margin-right: 2.5em;
-        font-size: 1.8em;
+    .utilities__description,
+    .buy-section__description,
+    .pact-section__description,
+    .tokenomics__description {
+        font-size: 2.5em;
+        margin-bottom: 3em;
         font-family: var(--font-secondary);
     }
 
+    .marquee__content span {
+        margin-right: 3.75em;
+        font-size: 2em;
+        font-family: var(--font-secondary);
+    }
+
+    .tokenomics__detail {
+        font-size: 2em;
+        font-family: var(--font-secondary);
+    }
+
+    .tokenomics__button {
+        font-size: 3em;
+        font-family: var(--font-secondary);
+        margin-bottom: 2em;
+    }
+
+    .tokenomics__additional-image {
+        max-width: 100%;
+    }
+
+    .pact-section__image {
+        margin-top: -10em;
+    }
+
     .socials__title {
-        font-size: 7em;
+        font-size: 5em;
         font-family: var(--font-primary);
     }
 
@@ -1642,47 +1706,16 @@ footer.socials__footer-link a.rednote:hover {
         font-family: var(--font-secondary);
     }
 
-    .socials__links {
-        font-size: 4em;
-        font-family: var(--font-secondary);
-    }
-
     .socials p {
         font-size: 2em;
-        font-family: var(--font-secondary);
     }
 
-    .socials__button {
-        font-size: 2em;
-        margin-top: 3rem;
+    .socials__links {
+        font-size: 3em;
         font-family: var(--font-secondary);
-    }
-
-    .socials__footer-link {
-        font-size: 1.3em;
-        font-weight: bolder;
-        font-family: var(--font-secondary);
-    }
-
-    .pact-section__button {
-        margin-bottom: 5em;
-        height: 5em;
-        font-size: 2em;
-        font-family: var(--font-secondary);
-    }
-
-    .tokenomics__detail {
-        font-size: 1.4em;
-        font-family: var(--font-secondary);
-    }
-
-    button.tokenomics__button {
-        height: 5em;
-        font-size: 2em;
     }
 }
 
-/* Appareils Très Grands: 1600px et plus */
 @media (min-width: 1600px) {
     .header__logo {
         width: 35vw;
@@ -1735,6 +1768,7 @@ footer.socials__footer-link a.rednote:hover {
     .utilities__card-title {
         font-size: 2.5em;
     }
+    
     .utilities__card-description {
         font-size: 2em;
     }

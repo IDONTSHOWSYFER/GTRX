@@ -232,6 +232,8 @@ main {
     color: var(--button-text);
     margin-top: 1em;
     font-family: var(--font-secondary);
+    padding-left: 2em;
+    padding-right: 2em;
 }
 
 .socials__title {
