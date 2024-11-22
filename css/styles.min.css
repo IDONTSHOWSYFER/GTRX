@@ -1,0 +1,1831 @@
+/* Importation des Polices Personnalisées */
+/* Lacquer Font */
+@font-face {
+    font-family: 'Lacquer';
+    src: url('/assets/font/Lacquer/Lacquer-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Sour Gummy Paint Font */
+@font-face {
+    font-family: 'Sour_Gummy';
+    src: url('/assets/font/Sour_Gummy/static/SourGummy-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Roboto Font for Enhanced Typography */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Définition des Variables CSS */
+:root {
+    --primary-color: #E31828;
+    --secondary-color: #333333;
+    --accent-color: #E31828;
+    --background-color: #1C1C1C;
+    --text-color: #FFFFFF;
+    --button-bg: linear-gradient(45deg, #E31828, #FF5733);
+    --button-hover-bg: linear-gradient(45deg, #FF5733, #C70039);
+    --button-text: #ffffff;
+    --transition-speed: 0.3s;
+    --font-primary: 'Lacquer', cursive;
+    --font-secondary: 'Sour_Gummy', cursive;
+    --font-enhanced: 'Roboto', sans-serif;
+    --max-content-width: 1200px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Réinitialisation et Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    transition: all var(--transition-speed) ease-out;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    overflow-x: hidden;
+    font-family: var(--font-enhanced);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2, h3 {
+    margin-bottom: 0.625em;
+    font-family: var(--font-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: var(--secondary-color);
+}
+
+h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+}
+
+h3 {
+    font-size: 1.5em;
+    color: var(--secondary-color);
+}
+
+p,
+.buy__p,
+.tokenomics__detail-info,
+.buy-section__description,
+.tokenomics__description,
+.socials__description {
+    font-weight: 400;
+    color: var(--text-color);
+    font-family: var(--font-secondary);
+    margin-bottom: 1em;
+}
+
+.highlight {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.container {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: 0 1.25em;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Header avec arrière-plan et ombre améliorés */
+.header {
+    background: linear-gradient(90deg, rgba(28,28,28,0.8), rgba(0,0,0,0.8));
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+    padding: 0 2vw;
+    position: relative;
+    z-index: 10;
+}
+
+.header__logo img {
+    width: 20vw;
+    height: auto;
+    transition: transform var(--transition-speed);
+}
+
+.header__logo img:hover {
+    transform: scale(1.05);
+}
+
+.header__link--integrations {
+    background: linear-gradient(45deg, #E31828, #FF5733);
+    padding: 0.625em 1.25em;
+    border: 0.1875em solid var(--secondary-color);
+    color: var(--button-text);
+    font-weight: bold;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 1em;
+    transition: background var(--transition-speed),
+                border-color var(--transition-speed),
+                color var(--transition-speed),
+                transform var(--transition-speed);
+    display: inline-block;
+    box-shadow: var(--box-shadow);
+}
+
+.header__link--integrations:hover {
+    background: linear-gradient(45deg, #FF5733, #C70039);
+    border-color: white;
+    color: var(--button-text);
+    transform: translateY(-2px);
+}
+
+/* Boutons avec styles améliorés */
+button,
+a button {
+    padding: 0.75em 1.5em;
+    border: 0.3125em solid var(--secondary-color);
+    font-weight: bold;
+    border-radius: 30px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    transition: background var(--transition-speed),
+                transform var(--transition-speed),
+                box-shadow var(--transition-speed);
+    display: inline-block;
+    margin: 0.625em auto;
+    text-decoration: none;
+    font-family: var(--font-secondary);
+    box-shadow: var(--box-shadow);
+}
+
+button:hover,
+a button:hover {
+    background: var(--button-hover-bg);
+    border-color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Boutons spécifiques avec animations */
+.hero__button,
+.utilities__button,
+.buy-section__button,
+.pact-section__button,
+.tokenomics__button,
+.socials__button {
+    background: var(--button-bg);
+    color: var(--button-text);
+    font-size: 1.2em;
+    transform: rotate(-3deg);
+    animation: swing 2s ease-in-out infinite;
+    position: relative;
+    font-family: var(--font-secondary);
+    box-shadow: var(--box-shadow);
+}
+
+.hero__button:hover,
+.pact-section__button:hover,
+.tokenomics__button:hover {
+    color: white;
+    background: var(--button-hover-bg);
+    transform: rotate(2deg);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.hero__button::after,
+.pact-section__button::after,
+.tokenomics__button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 200%;
+    height: 20px;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(100%);
+    transition: transform var(--transition-speed);
+}
+
+.hero__button:hover::after,
+.pact-section__button:hover::after,
+.tokenomics__button:hover::after {
+    transform: translateX(-50%) translateY(0);
+}
+
+.hero__button:active {
+    animation: shake-rotate 0.5s;
+}
+
+.socials__button {
+    animation: swing-social 2s ease-in-out infinite;
+}
+
+.socials__button:hover {
+    transform: translate(5px, -5px) rotate(5deg);
+    animation: none;
+}
+
+/* Section Hero améliorée */
+.hero {
+    position: relative;
+    text-align: center;
+    color: var(--text-color);
+    display: grid;
+    grid-template-areas:
+        "images"
+        "content"
+        "social-links";
+    gap: 2em;
+    padding: 4em 0;
+    overflow: hidden;
+    width: 100%;
+    background: linear-gradient(135deg, #bb1a1a 20%, #df5e69 70%, #ffbbbb 100%);
+}
+
+.hero__images {
+    grid-area: images;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.hero__main-image {
+    position: relative;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin: 0 auto;
+    transition: transform var(--transition-speed) ease-out;
+}
+
+.hero__main-image:hover {
+    transform: scale(1.05);
+}
+
+.hero__content {
+    grid-area: content;
+    position: relative;
+    z-index: 2;
+    margin: 2em 0;
+}
+
+.hero__title {
+    font-size: 3em;
+    color: var(--text-color);
+    margin-top: 0;
+    font-weight: 700;
+    font-family: var(--font-primary);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero__social-links {
+    grid-area: social-links;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-bottom: 2em;
+    z-index: 2;
+}
+
+.hero__social-links a img {
+    width: 4em;
+    height: auto;
+    transition: transform var(--transition-speed);
+}
+
+.hero__social-links a img:hover {
+    transform: scale(1.2);
+}
+
+/* Marquee améliorée */
+.hero__marquee {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-top: 0.2em solid var(--primary-color);
+    border-bottom: 0.2em solid var(--primary-color);
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 1em 0;
+    width: 100%;
+}
+
+.marquee__content {
+    display: flex;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+}
+
+.marquee__content span {
+    margin-right: 4em;
+    font-size: 2em;
+    font-family: var(--font-secondary);
+    font-weight: bold;
+    color: var(--accent-color);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Sections avec styles améliorés */
+section + section {
+    border-top: 5px solid var(--secondary-color);
+}
+
+.exchanges {
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding: 4em 0;
+    width: 100%;
+    color: var(--text-color);
+}
+
+.exchanges__title {
+    color: var(--primary-color);
+    font-size: 3em;
+    margin: 1em 0 1em;
+    transition: font-size var(--transition-speed) ease-out;
+    font-family: var(--font-primary);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.exchanges__description {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 3em;
+    transition: font-size var(--transition-speed) ease-out;
+    font-family: var(--font-secondary);
+}
+
+.exchanges__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2em;
+    justify-items: center;
+    padding: 0 2.5em;
+    overflow: hidden;
+}
+
+.exchanges__link {
+    background-color: #444444;
+    border-radius: 10px;
+    border: 0.3125em solid #2C2C2C;
+    display: block;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.exchanges__link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.exchanges__link img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.exchanges__note {
+    color: var(--text-color);
+    margin: 3.125em 0;
+    font-size: 2rem;
+    transition: font-size var(--transition-speed) ease-out;
+    font-family: var(--font-secondary);
+}
+
+.artwork-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Custom cursor for Exchanges section (Desktop only) */
+@media (hover: hover) and (pointer: fine) {
+    /* Cible la section avec l'ID 'exchanges' */
+    #exchanges {
+        cursor: url('/assets/img/cursor.png') 16 16, auto;
+    }
+}
+
+/* Feedback visuel pour les appareils tactiles dans la section Exchanges */
+@media (hover: none) and (pointer: coarse) {
+    #exchanges a {
+        /* Ajouter un effet de surbrillance au toucher */
+        transition: background-color 0.3s ease;
+    }
+
+    #exchanges a:active {
+        background-color: rgba(255, 0, 0, 0.2);
+    }
+}
+
+/* Section Utilities avec couleurs ajustées */
+.utilities {
+    text-align: center;
+    padding: 4em 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    color: var(--secondary-color);
+}
+
+.utilities__title {
+    font-size: 3em;
+    margin-bottom: 1em;
+    transition: font-size var(--transition-speed) ease-out;
+    color: var(--primary-color);
+    font-family: var(--font-primary);
+}
+
+.utilities__description {
+    font-size: 1.5em;
+    margin-bottom: 2em;
+    transition: font-size var(--transition-speed) ease-out;
+    color: var(--secondary-color);
+    font-family: var(--font-secondary);
+}
+
+.utilities__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    padding: 0 1.25em;
+    overflow: hidden;
+}
+
+.utilities__card {
+    background-color: #FFFFFF; 
+    border: 0.125em solid #E0E0E0;
+    border-radius: 15px;
+    padding: 2em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    overflow: hidden;
+    color: var(--secondary-color);
+    font-family: var(--font-secondary);
+}
+
+.utilities__card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.utilities__card-title {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    transition: font-size var(--transition-speed) ease-out;
+    color: var(--primary-color);
+    font-family: var(--font-primary);
+}
+
+.utilities__card-description {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    transition: font-size var(--transition-speed) ease-out;
+    color: var(--secondary-color);
+    font-family: var(--font-secondary);
+}
+
+.utilities-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;           
+    margin: 2em 0; 
+}
+
+.utilities__image {
+    max-width: 100%; 
+    width: 25em; 
+    height: auto;
+    display: block;
+    transition: transform var(--transition-speed);
+}
+
+.utilities__image:hover {
+    transform: scale(1.05);
+}
+
+/* Buy Section */
+.buy-section {
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding: 4em 0;
+    width: 100%;
+    color: var(--text-color);
+}
+
+.buy-section__title {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 1em;
+    transition: font-size var(--transition-speed) ease-out;
+    font-family: var(--font-primary);
+}
+
+.buy-section__description {
+    font-size: 1.5em;
+    color: var(--text-color);
+    margin-bottom: 2em;
+    transition: font-size var(--transition-speed) ease-out;
+    font-family: var(--font-secondary);
+}
+
+.buy-section__steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    padding: 0 1.25em;
+    overflow: hidden;
+}
+
+.buy-section__step {
+    background-color: #555555;
+    color: var(--primary-color);
+    padding: 2em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border: 0.1875em solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    line-height: 1.6em;
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: var(--font-secondary);
+}
+
+.buy-section__step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.buy-section__step-flex {
+    display: flex;
+    align-items: center;
+}
+
+.buy-section__step-number {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-right: 0.625em;
+    flex-shrink: 0;
+    font-family: var(--font-primary);
+}
+
+.buy-section__step-title {
+    font-size: 1.5em;
+    margin-bottom: 0.3125em;
+    color: var(--text-color);
+    font-family: var(--font-secondary);
+}
+
+.buy__p {
+    color: var(--text-color);
+    font-size: 1em;
+    font-family: var(--font-secondary);
+}
+
+.buy-section__image {
+    margin: 0 auto;
+    max-width: 70%;
+    height: auto;
+    border-radius: 15px;
+    margin-top: 2em;
+    transition: transform var(--transition-speed);
+}
+
+.buy-section__image:hover {
+    transform: scale(1.05);
+}
+
+/* Section Pact améliorée */
+.pact-section {
+    text-align: center;
+    background-color: #FFFFFF;
+    border-top: 5px solid var(--secondary-color);
+    width: 100%;
+    color: var(--secondary-color);
+}
+
+.pact-section__title {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 1em;
+    transition: font-size var(--transition-speed) ease-out;
+    font-family: var(--font-primary);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.pact-section__description {
+    font-size: 1.5em;
+    margin-bottom: 2em;
+    transition: font-size var(--transition-speed) ease-out;
+    color: var(--secondary-color);
+    font-family: var(--font-secondary);
+}
+
+.pact-section__image {
+    width: 80%;
+    height: auto;
+    border-radius: 15px;
+    margin: 0 auto;
+    transition: transform var(--transition-speed);
+}
+
+.pact-section__image:hover {
+    transform: scale(1.05);
+}
+
+.pact-section__link {
+    text-decoration: none;
+}
+
+.pact-section__button {
+    background: var(--button-bg);
+    color: var(--button-text);
+    font-size: 1.5em;
+    transform: rotate(-3deg);
+    animation: swing 2s ease-in-out infinite;
+    position: relative;
+    margin-bottom: 1em;
+    font-family: var(--font-secondary);
+    box-shadow: var(--box-shadow);
+}
+
+.pact-section__button:hover {
+    color: white;
+    background: var(--button-hover-bg);
+    transform: rotate(2deg);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Section Tokenomics améliorée */
+.tokenomics {
+    text-align: center;
+    background-color: var(--secondary-color);
+    padding: 4em 0;
+    width: 100%;
+    color: var(--text-color);
+}
+
+.tokenomics__title {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin: 2em 0 1em;
+    transition: font-size var(--transition-speed) ease-out;
+    font-family: var(--font-primary);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.tokenomics__description {
+    font-size: 1.5em;
+    color: var(--text-color);
+    margin-bottom: 2em;
+    padding: 1.5em;
+    transition: font-size var(--transition-speed) ease-out;
+    font-family: var(--font-secondary);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.tokenomics__container {
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    padding: 0 1.25em;
+    overflow: hidden;
+}
+
+.tokenomics__image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1.5em;
+    border: 0.1875em solid var(--primary-color);
+    border-radius: 15px;
+    margin-top: 1em;
+    position: relative;
+    animation: alert-blink 1s infinite alternate;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed);
+}
+
+.tokenomics__image:hover {
+    transform: scale(1.05);
+}
+
+.tokenomics__image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    pointer-events: none;
+    z-index: 1;
+    animation: none;
+}
+
+.tokenomics__details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.tokenomics__detail {
+    background-color: #ffffff25;
+    color: var(--text-color);
+    padding: 2em;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin-bottom: 1.5em;
+    overflow: hidden;
+    font-family: var(--font-secondary);
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.tokenomics__detail:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.tokenomics__detail-title {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+    transition: font-size var(--transition-speed) ease-out;
+    font-family: var(--font-primary);
+    color: var(--primary-color);
+}
+
+.tokenomics__detail-info {
+    font-size: 1.2em;
+    transition: font-size var(--transition-speed) ease-out;
+    font-family: var(--font-secondary);
+}
+
+.tokenomics__buy-link {
+    text-decoration: none;
+}
+
+.tokenomics__button {
+    background: var(--button-bg);
+    color: var(--button-text);
+    font-size: 1.5em;
+    transform: rotate(-3deg);
+    animation: swing 2s ease-in-out infinite;
+    position: relative;
+    margin: 1.5em auto;
+    font-family: var(--font-secondary);
+    box-shadow: var(--box-shadow);
+}
+
+.tokenomics__button:hover {
+    color: white;
+    background: var(--button-hover-bg);
+    transform: rotate(2deg);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.tokenomics__additional-image {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    animation: shake-translate 0.5s infinite, disco 3s infinite alternate;
+    filter: brightness(1.2);
+    z-index: 1;
+    max-width: 100%;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+/* Section Socials améliorée */
+.socials {
+    text-align: center;
+    background-color: var(--primary-color);
+    padding: 4em 0;
+    width: 100%;
+    overflow: hidden;
+    color: var(--text-color);
+}
+
+.socials__title {
+    font-size: 3em;
+    color: var(--text-color);
+    margin-bottom: 1em;
+    transition: font-size var(--transition-speed) ease-out;
+    font-family: var(--font-secondary);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.socials__description {
+    font-size: 1.5em;
+    color: var(--text-color);
+    margin-bottom: 2em;
+    transition: font-size var(--transition-speed) ease-out;
+    font-family: var(--font-secondary);
+}
+
+.socials__links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-bottom: 2em;
+    overflow: hidden;
+}
+
+.socials__link img {
+    width: 4em;
+    height: auto;
+    transition: transform var(--transition-speed);
+}
+
+.socials__link img:hover {
+    transform: scale(1.2);
+}
+
+.socials__button {
+    background: var(--button-bg);
+    color: var(--primary-color);
+    font-size: 1.5em;
+    transform: rotate(-3deg);
+    animation: swing-social 2s ease-in-out infinite;
+    margin-bottom: 2em;
+    font-family: var(--font-secondary);
+    box-shadow: var(--box-shadow);
+    padding: 0.75em 1.5em;
+    border-radius: 30px;
+}
+
+.socials__button:hover {
+    background: var(--button-hover-bg);
+    transform: translateY(-3px) rotate(2deg);
+    animation: none;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.socials__additional-image {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    animation: shake-translate 0.5s infinite, disco 3s infinite alternate;
+    filter: brightness(1.2);
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+/* Pied de page */
+footer.socials__footer-link {
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    padding: 1em 2em;
+    border-top: 5px solid var(--secondary-color);
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: var(--font-secondary);
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+footer.socials__footer-link a.rednote {
+    margin-left: auto;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    transition: color var(--transition-speed);
+}
+
+footer.socials__footer-link a.rednote:hover {
+    color: var(--accent-color);
+}
+
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    font-family: var(--font-secondary);
+}
+
+.fade-in-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInElastic 0.6s forwards;
+}
+
+/* Keyframes */
+@keyframes shake-rotate {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(2deg);
+    }
+    50% {
+        transform: rotate(-2deg);
+    }
+    75% {
+        transform: rotate(2deg);
+    }
+}
+
+@keyframes shake-translate {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10% {
+        transform: translateX(-5px);
+    }
+    20% {
+        transform: translateX(5px);
+    }
+    30% {
+        transform: translateX(-6px);
+    }
+    40% {
+        transform: translateX(6px);
+    }
+    50% {
+        transform: translateX(-7px);
+    }
+    60% {
+        transform: translateX(7px);
+    }
+    70% {
+        transform: translateX(-6px);
+    }
+    80% {
+        transform: translateX(6px);
+    }
+    90% {
+        transform: translateX(-5px);
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes alert-blink {
+    0% {
+        opacity: 1;
+        box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.8);
+        filter: brightness(0.5);
+    }
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 30px 10px rgba(255, 0, 0, 1);
+        filter: brightness(1);
+    }
+}
+
+@keyframes image-red-overlay {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+
+@keyframes swing-social {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-5px, 5px) rotate(-2.5deg);
+    }
+    50% {
+        transform: translate(5px, -5px) rotate(2.5deg);
+    }
+    75% {
+        transform: translate(-5px, 5px) rotate(-2.5deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes disco {
+    0% {
+        filter: brightness(1.2) hue-rotate(0deg);
+    }
+    25% {
+        filter: brightness(1.2) hue-rotate(60deg);
+    }
+    50% {
+        filter: brightness(1.2) hue-rotate(120deg);
+    }
+    75% {
+        filter: brightness(1.2) hue-rotate(180deg);
+    }
+    100% {
+        filter: brightness(1.2) hue-rotate(240deg);
+    }
+}
+
+@keyframes fadeInElastic {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Styles Responsives */
+
+/* Mobile: max-width 320px */
+@media (max-width: 320px) {
+    footer.socials__footer-link {
+        flex-direction: column;
+        padding: 0.25em 0.5em;
+        width: 100%;
+        text-align: center;
+    }
+
+    footer.socials__footer-link a.rednote {
+        font-size: 0.8em;
+        margin: 0.25em 0;
+    }
+
+    .socials__links {
+        font-size: 2em;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5em;
+        margin-bottom: 0.4em;
+    }
+
+    .header__logo img {
+        width: 7em;
+    }
+
+    .header__link {
+        font-size: 0.6em;
+    }
+
+    .hero__title {
+        font-size: 3em;
+        margin-top: 0;
+        font-family: var(--font-primary);
+    }
+
+    .hero__social-links {
+        margin-top: 2em;
+    }
+
+    .hero__button,
+    .tokenomics__button,
+    .pact-section__button {
+        font-size: 1em;
+        padding: 0.4em 0.75em;
+        max-width: 140px;
+        margin-top: 1.5em;
+        margin-bottom: 3em;
+        font-family: var(--font-secondary);
+    }
+
+    .exchanges__title,
+    .utilities__title,
+    .buy-section__title,
+    .tokenomics__title {
+        font-size: 2.2em;
+        font-family: var(--font-primary);
+    }
+
+    .utilities__card-title {
+        font-size:0.7em;
+    }
+
+    .utilities__button {
+        font-size: 0.7em;
+    }
+
+    .exchanges__description,
+    .utilities__description,
+    .buy-section__description,
+    .tokenomics__description,
+    .socials__description {
+        font-size: 1.3em;
+        font-family: var(--font-secondary);
+    }
+
+    .pact-section__description {
+        font-size: 0.8em;
+        margin-top: 2em;
+        color: var(--secondary-color);
+        font-family: var(--font-secondary);
+    }
+
+    .tokenomics__detail-title {
+        font-size: 1.3em;
+        font-family: var(--font-primary);
+    }
+
+    .tokenomics__detail-info {
+        font-size: 0.8em;
+        font-family: var(--font-secondary);
+    }
+
+    .tokenomics__additional-image {
+        position: relative;
+        transform: translateX(0);
+        margin-top: 2em;
+    }
+
+    .exchanges__grid,
+    .utilities__grid,
+    .buy-section__steps,
+    .tokenomics__details {
+        grid-template-columns: 1fr;
+        gap: 0.5em;
+    }
+
+    .pact-section__image {
+        max-width: 100%;
+    }
+
+    .hero__images,
+    .hero__content,
+    .hero__social-links {
+        max-width: 100%;
+        padding: 0 0.5em;
+    }
+}
+
+/* Petits à Moyens Appareils: 321px à 559px */
+@media (max-width: 559px) and (min-width: 321px) {
+    .header__nav {
+        height: 10vh;
+        padding: 0 0.5em;
+    }
+
+    .header__logo img {
+        width: 40vw;
+        max-width: 150px;
+        margin-top: 0;
+    }
+
+    .header__link--integrations {
+        padding: 0.5em 0.75em;
+        font-size: 0.9em;
+        margin-top: 0;
+    }
+
+    .hero__main-image {
+        max-width: 280px;
+        margin-right: 0;
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .hero__button {
+        max-width: 200px;
+        padding: 0.5em 0.75em;
+        font-size: 2em;
+        margin-top: 2em;
+        font-family: var(--font-secondary);
+    }
+
+    .hero__title {
+        font-size: 3em;
+        margin-top: 0;
+        font-family: var(--font-primary);
+    }
+
+    .hero__social-links {
+        font-size: 2em;
+        margin-top: 1.5em;
+    }
+
+    .exchanges__title {
+        font-size: 2.5em;
+        font-family: var(--font-primary);
+    }
+
+    .exchanges__description,
+    .listings-p {
+        font-size: 1.4rem;
+        font-family: var(--font-secondary);
+    }
+
+    .utilities__title {
+        font-size: 3em;
+        font-family: var(--font-primary);
+    }
+
+    .utilities__description {
+        font-size: 1.5em;
+        font-family: var(--font-secondary);
+    }
+
+    .buy-section__title {
+        font-size: 2.5em;
+        font-family: var(--font-primary);
+    }
+
+    .buy-section__description {
+        font-size: 1.5em;
+        font-family: var(--font-secondary);
+    }
+
+    .pact-section__title {
+        font-size: 2.5em;
+        margin-top: 2em;
+        font-family: var(--font-primary);
+    }
+
+    .pact-section__button {
+        margin-bottom: 2em;
+        font-size: 1.5em;
+        font-family: var(--font-secondary);
+    }
+
+    .tokenomics__title {
+        font-size: 3em;
+        font-family: var(--font-primary);
+    }
+
+    .tokenomics__description {
+        font-size: 1.1em;
+        font-family: var(--font-secondary);
+    }
+
+    .marquee__content span {
+        margin-right: 1.25em;
+        font-size: 1em;
+        font-family: var(--font-secondary);
+    }
+
+    .socials__title {
+        font-size: 3em;
+        font-family: var(--font-primary);
+    }
+
+    .socials__description {
+        font-size: 1.6em;
+        font-family: var(--font-secondary);
+    }
+
+    .socials__links {
+        gap: 0.4em;
+    }
+
+    .socials__link img {
+        width: 5.5em;
+    }
+}
+
+/* Appareils Moyens: 560px à 1199px */
+@media (min-width: 560px) and (max-width: 1199px) {
+    h1 {
+        font-size: 3em;
+        font-family: var(--font-primary);
+    }
+
+    .header__nav {
+        height: 15vh;
+        padding: 0 1em;
+    }
+
+    .header__link {
+        font-size: 2.5vw;
+    }
+
+    .header__logo img {
+        width: 25vw;
+        max-width: 600px;
+    }
+
+    .hero__main-image {
+        max-width: 100%;
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .hero__title {
+        font-size: 5em;
+        margin-top: 0;
+        font-family: var(--font-primary);
+    }
+
+    .hero__button {
+        font-size: 2.5em;
+        margin-top: 2em;
+        font-family: var(--font-secondary);
+    }
+
+    .hero__social-links {
+        font-size: 3em;
+        margin-top: 2em;
+    }
+
+    .exchanges__title {
+        font-size: 5em;
+        margin-top: 1em;
+    }
+
+    .exchanges__grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.25em;
+        justify-items: center;
+        padding: 0 2.5em;
+    }
+
+    .buy-section__title {
+        font-size: 5em;
+    }
+
+    .buy-section__description {
+        font-size: 2em;
+    }
+
+    .buy-section__step-title {
+        font-size: 1.5em;
+    }
+
+    .buy-section__steps {
+        font-size: 1.2em;
+    }
+
+    .exchanges__link {
+        width: 100%;
+        max-width: 300px;
+        display: block;
+    }
+
+    .marquee__content span {
+        font-size: 1.4em;
+        font-family: var(--font-secondary);
+    }
+
+    .buy-section__image {
+        max-width: 100%;
+    }
+
+    .pact-section__image  {
+        max-width: 100%;
+        margin-top: -2em;
+        margin-bottom: 2em;
+    }
+
+    .pact-section__title {
+        font-size: 5em;
+        margin-top: 1.5em;
+        font-family: var(--font-primary);
+    }
+
+    .pact-section__description {
+        font-size: 2em;
+        margin-top: 3em;
+        font-family: var(--font-secondary);
+    }
+
+    .pact-section__button {
+        margin-bottom: 5em;
+        margin-top: -1em;
+        font-size: 2em;
+        font-family: var(--font-secondary);
+    }
+
+    .tokenomics__title {
+        font-size: 5em;
+    }
+
+    .tokenomics__detail-title{
+        color: var(--primary-color);
+    }
+
+    .tokenomics__detail-info {
+        font-size: 1em;
+        font-family: var(--font-secondary);
+    }
+
+    .tokenomics__button {
+        margin-top: 2em;
+        margin-bottom: 4em;
+        font-family: var(--font-secondary);
+    }
+
+    .socials__title {
+        font-size: 5em;
+        font-family: var(--font-secondary);
+    }
+
+    .socials__description {
+        font-size: 2em;
+        font-family: var(--font-secondary);
+    }
+
+    .socials__links {
+        flex-direction: column;
+        align-items: center;
+        font-size: 3em;
+        font-family: var(--font-secondary);
+    }
+
+    .tokenomics__detail {
+        font-size: 1.2em;
+        font-family: var(--font-secondary);
+    }
+}
+
+@media  (min-width: 850px) {
+    .artwork-container {
+        display: none;
+    }
+}
+
+/* Grands Appareils: 1200px à 1599px */
+@media (min-width: 1200px) and (max-width: 1599px) {
+    .header__nav {
+        height: 20vh;
+        padding: 0 1em;
+    }
+
+    .header__link {
+        font-size: 2.5vw;
+    }
+
+    .header__logo img {
+        width: 30vw;
+        max-width: 600px;
+    }
+
+    .hero__main-image {
+        max-width: 80%;
+    }
+
+    .hero__title {
+        font-size: 7em;
+        margin-top: 0;
+        font-family: var(--font-primary);
+    }
+
+    .hero__button {
+        font-size: 2em;
+        margin-top: 2em;
+        font-family: var(--font-secondary);
+    }
+
+    .hero__social-links {
+        font-size: 3.5em;
+        margin-top: 2em;
+    }
+
+    .exchanges__title {
+        font-size: 5em;
+        margin-top: 1em;
+        font-family: var(--font-primary);
+    }
+
+    .utilities__title,
+    .buy-section__title,
+    .pact-section__title,
+    .tokenomics__title {
+        font-size: 5em;
+        font-family: var(--font-primary);
+    }
+
+    .exchanges__description,
+    .listings-p {
+        font-size: 2rem;
+        font-family: var(--font-secondary);
+    }
+
+    .exchanges__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px; 
+        justify-content: center; 
+        align-items: center;
+    }
+    
+    .exchanges__link {
+        width: 500px;
+        display: block;
+        text-align: center;
+    }
+
+    .utilities__description,
+    .buy-section__description,
+    .pact-section__description,
+    .tokenomics__description {
+        font-size: 2em;
+        font-family: var(--font-secondary);
+    }
+
+    .buy-section__step-number {
+        font-size:3em;
+    }
+
+    .buy-section__step-title {
+        font-size: 2em;
+    }
+
+    .buy__p {
+        font-size: 1.5em;
+    }
+
+    .marquee__content span {
+        margin-right: 2.5em;
+        font-size: 1.8em;
+        font-family: var(--font-secondary);
+    }
+
+    .socials__title {
+        font-size: 7em;
+        font-family: var(--font-primary);
+    }
+
+    .socials__description {
+        font-size: 3em;
+        font-family: var(--font-secondary);
+    }
+
+    .socials__links {
+        font-size: 4em;
+        font-family: var(--font-secondary);
+    }
+
+    .socials p {
+        font-size: 2em;
+        font-family: var(--font-secondary);
+    }
+
+    .socials__button {
+        font-size: 2em;
+        margin-top: 3rem;
+        font-family: var(--font-secondary);
+    }
+
+    .socials__footer-link {
+        font-size: 1.3em;
+        font-weight: bolder;
+        font-family: var(--font-secondary);
+    }
+
+    .pact-section__button {
+        margin-bottom: 5em;
+        height: 5em;
+        font-size: 2em;
+        font-family: var(--font-secondary);
+    }
+
+    .tokenomics__detail {
+        font-size: 1.4em;
+        font-family: var(--font-secondary);
+    }
+
+    button.tokenomics__button {
+        height: 5em;
+        font-size: 2em;
+    }
+}
+
+/* Appareils Très Grands: 1600px et plus */
+@media (min-width: 1600px) {
+    .header__logo {
+        width: 35vw;
+    }
+
+    .header__link {
+        font-size: 2em;
+    }
+
+    .hero__title {
+        font-size: 13em;
+        margin-top: 0;
+        font-family: var(--font-primary);
+    }
+
+    .hero__main-image {
+        max-width: 900px;
+    }
+
+    .hero__button {
+        font-size: 5em;
+        font-family: var(--font-secondary);
+    }
+
+    .hero__social-links {
+        font-size: 3em;
+        margin-top: 2em;
+    }
+
+    .exchanges__title {
+        font-size: 7em;
+        font-family: var(--font-primary);
+    }
+
+    .exchanges__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .utilities__title {
+        font-size: 7em;
+        margin-top: 1em;
+        font-family: var(--font-primary);
+    }
+
+    .utilities__description {
+        margin-bottom: 0em;
+        font-family: var(--font-secondary);
+    }
+
+    .utilities__card-title {
+        font-size: 2.5em;
+    }
+    .utilities__card-description {
+        font-size: 2em;
+    }
+
+    .buy-section__title,
+    .pact-section__title {
+        font-size: 7em;
+        margin-top: 2em;
+        font-family: var(--font-primary);
+    }
+
+    .pact-section__button {
+        font-size: 3em;
+        margin-top: -1em;
+        margin-bottom: 2em;
+        font-family: var(--font-secondary);
+    }
+
+    .tokenomics__title {
+        font-size: 5em;
+        font-family: var(--font-primary);
+    }
+
+    .exchanges__description,
+    .listings-p {
+        font-size: 3rem;
+        font-family: var(--font-secondary);
+    }
+
+    .buy-section__step-number {
+        font-size: 3em;  
+    }
+
+    .buy-section__step-title {
+        font-size: 2em;
+    }
+
+    .buy__p {
+        font-size: 1.7em;
+    }
+
+    .utilities__description,
+    .buy-section__description,
+    .pact-section__description,
+    .tokenomics__description {
+        font-size: 2.5em;
+        margin-bottom: 3em;
+        font-family: var(--font-secondary);
+    }
+
+    .marquee__content span {
+        margin-right: 3.75em;
+        font-size: 2em;
+        font-family: var(--font-secondary);
+    }
+
+    .tokenomics__detail {
+        font-size: 2em;
+        font-family: var(--font-secondary);
+    }
+
+    .tokenomics__button {
+        font-size: 3em;
+        font-family: var(--font-secondary);
+        margin-bottom: 2em;
+    }
+
+    .tokenomics__additional-image {
+        max-width: 100%;
+    }
+
+    .pact-section__image {
+        margin-top: -10em;
+    }
+
+    .socials__title {
+        font-size: 5em;
+        font-family: var(--font-primary);
+    }
+
+    .socials__description {
+        font-size: 3em;
+        font-family: var(--font-secondary);
+    }
+
+    .socials p {
+        font-size: 2em;
+    }
+
+    .socials__links {
+        font-size: 3em;
+        font-family: var(--font-secondary);
+    }
+}

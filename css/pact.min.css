@@ -1,0 +1,606 @@
+/* Font Definitions */
+@font-face {
+    font-family: 'Lacquer';
+    src: url('/assets/font/Lacquer/Lacquer-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sour_Gummy';
+    src: url('/assets/font/Sour_Gummy/static/SourGummy-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Variables */
+:root {
+    /* Couleurs */
+    --primary-color: #ff0000; /* Rouge vif */
+    --secondary-color: #000000; /* Noir */
+    --background-gradient: linear-gradient(to bottom, #ff0000, #ffffff);
+    --card-background: rgba(255, 255, 255, 0.95);
+    --text-color: #FFFFFF;
+    --button-bg: #FF0000;
+    --button-text: #FFFFFF;
+    --button-hover-bg: #cc0000; /* Rouge foncé au survol */
+    --button-border-radius: 5px;
+    --button-padding: 15px 30px;
+    --button-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    /* Typographie */
+    --font-primary: 'Lacquer', cursive; /* Remplacé 'Rubik Wet Paint' par 'Lacquer' */
+    --font-secondary: 'Sour_Gummy', cursive; /* Remplacé 'Creepster' par 'Sour_Gummy' */
+    --font-size-base: 1.2em;
+    --font-size-h1: 5em;
+    --font-size-h2: 2.5em;
+    --font-size-h3: 1.5em;
+    --font-size-description: 1.2em;
+    --font-size-button: 1.2em;
+
+    /* Espacement */
+    --padding-section: 40px 20px;
+    --gap-socials: 20px;
+    --social-icon-size: 50px;
+
+    /* Dimensions des cartes sociales */
+    --social-card-size: 100px;
+
+    /* Animations */
+    --animation-fade-in-duration: 2s;
+
+    /* Transition */
+    --transition-speed: 0.3s;
+}
+
+/* Réinitialisation */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all var(--transition-speed) ease-out;
+}
+
+/* Body */
+body {
+    background: var(--background-gradient);
+    color: var(--text-color);
+    font-family: var(--font-secondary), sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+/* Titres */
+.grum-title {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-h1);
+    margin: 4em 0 10px 0;
+    color: var(--text-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.main-title {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-h2);
+    opacity: 0;
+    animation: fadeIn var(--animation-fade-in-duration) forwards;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Logo */
+.logo-container {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo {
+    width: 300px;
+    height: auto;
+}
+
+/* Conteneur Principal */
+.container {
+    background-color: var(--card-background);
+    border-radius: 15px;
+    padding: 40px 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 1000px;
+    width: 90%;
+    text-align: center;
+    margin-top: 100px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+/* Flèche de Retour */
+.back-arrow {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    color: var(--secondary-color);
+    font-size: 2.5em;
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+.back-arrow:hover {
+    color: var(--button-bg);
+}
+
+/* Zone de Signature */
+#signature-container {
+    border: 2px dashed var(--primary-color);
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    position: relative;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#signature-pad {
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+    border-radius: 10px;
+}
+
+/* Bouton */
+button {
+    padding: var(--button-padding);
+    font-size: var(--font-size-button);
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: var(--button-border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    font-family: var(--font-primary);
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+button:disabled {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: rgba(0, 0, 0, 0.6);
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-2px);
+    box-shadow: var(--button-shadow);
+}
+
+/* Socials Section */
+.socials {
+    border-radius: 15px;
+    padding: 40px 20px;
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.socials__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.socials__title {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-h2);
+    margin-bottom: 10px;
+    margin-top: 0.5em;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.socials__description {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-description);
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 1em;
+    color: #000000;
+}
+
+.socials__links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--social-card-size), 1fr));
+    gap: var(--gap-socials);
+    margin-bottom: 20px;
+}
+
+.socials__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--social-card-size);
+    height: var(--social-card-size);
+    border-radius: 10px;
+    transition: transform var(--transition-speed), background-color var(--transition-speed);
+}
+
+.socials__link:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.socials__icon {
+    width: 50%;
+    height: 50%;
+}
+
+/* Bouton d'Action dans Socials */
+.socials__button {
+    padding: var(--button-padding);
+    font-size: var(--font-size-button);
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: var(--button-border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    font-family: var(--font-primary);
+}
+
+.socials__button:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-2px);
+    box-shadow: var(--button-shadow);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    border-top: 10px solid black;
+    margin-top: auto;
+    /* Ajout de marges négatives pour compenser le padding du body */
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.rednote {
+    display: block; /* Assure que le lien prend toute la largeur du footer */
+    width: 100%;
+    color: var(--primary-color);
+    font-family: var(--font-secondary);
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color var(--transition-speed), background-color var(--transition-speed), padding var(--transition-speed), border-radius var(--transition-speed);
+}
+
+.rednote:hover {
+    color: #FFFFFF;
+    background-color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Responsive Styles */
+
+/* Ultra Small Devices (max-width: 320px) */
+@media (max-width: 320px) {
+    .container {
+        width: 15em;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .grum-title {
+        margin-top: 2.5em;
+    }
+
+    .main-title {
+        font-size: 1.5em;
+    }
+
+    #signature-container {
+        height: 150px;
+    }
+
+    button,
+    .socials__button {
+        font-size: 0.8em;
+        padding: 8px 16px;
+    }
+
+    .socials__title {
+        font-size: 2em;
+    }
+
+    .socials__description {
+        font-size: 1em;
+    }
+
+    .fa-arrow-left {
+        font-size: 0.5em;
+    }
+
+    .socials__icon {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Extra Small Devices (321px to 480px) */
+@media (min-width: 321px) and (max-width: 480px) {
+    .logo {
+        width: 250px;
+    }
+
+    .container {
+        width: 20em;
+    }
+
+    .grum-title {
+        font-size: 3em;
+        margin-top: 6em;
+    }
+
+    .fa-arrow-left {
+        font-size: 0.7em;
+    }
+
+    .main-title {
+        font-size: 1.8em;
+    }
+
+    #signature-container {
+        height: 200px;
+    }
+
+    button,
+    .socials__button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+
+    .socials__title {
+        font-size: 3em;
+    }
+
+    .socials__description {
+        font-size: 1.5em;
+    }
+
+    .socials__icon {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Small Devices (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .grum-title {
+        font-size: 4em;
+    }
+
+    .main-title {
+        font-size: 2em;
+    }
+
+    .fa-arrow-left {
+        font-size: 0.6em;
+    }
+
+    #signature-container {
+        height: 250px;
+    }
+
+    button,
+    .socials__button {
+        font-size: 1em;
+        padding: 12px 24px;
+    }
+
+    .socials__title {
+        font-size: 3.5em;
+    }
+
+    .socials__description {
+        font-size: 2em;
+    }
+
+    .socials__icon {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Medium Devices (769px to 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+    .grum-title {
+        font-size: 5em;
+    }
+
+    .main-title {
+        font-size: 2.5em;
+    }
+
+    .fa-arrow-left {
+        font-size: 0.8em;
+        margin-top: 1em;
+    }
+
+    #signature-container {
+        height: 300px;
+    }
+
+    button,
+    .socials__button {
+        font-size: 1.2em;
+        padding: 15px 30px;
+    }
+
+    .socials__title {
+        font-size: 4em;
+        margin-top: -0.5em;
+    }
+
+    .socials__description {
+        font-size: 2em;
+    }
+
+    .socials__icon {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Large Devices (993px to 1200px) */
+@media (min-width: 993px) and (max-width: 1200px) {
+    .grum-title {
+        font-size: 6em;
+    }
+
+    .main-title {
+        font-size: 2.5em;
+    }
+
+    .fa-arrow-left {
+        font-size: 1em;
+        margin-top: 0.5em;
+    }
+
+    #signature-container {
+        height: 300px;
+    }
+
+    button,
+    .socials__button {
+        font-size: 1.2em;
+        padding: 15px 30px;
+    }
+
+    .socials__title {
+        font-size: 4em;
+        margin-top: -0.5em;
+    }
+
+    .socials__description {
+        font-size: 2em;
+    }
+
+    .socials__icon {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Extra Large Devices (1201px to 1600px) */
+@media (min-width: 1201px) and (max-width: 1600px) {
+    .grum-title {
+        font-size: 7em;
+        margin-top: 3em;
+    }
+
+    .socials__title {
+        font-size: 4.5em;
+    }
+
+    .socials__description {
+        font-size: 2.5em;
+    }
+
+    .fa-arrow-left {
+        font-size: 1em;
+        margin-top: 1em;
+        margin-left: 0.5em;
+    }
+
+    #signature-container {
+        height: 350px;
+    }
+
+    .socials__icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .socials__button {
+        font-size: 1.5em;
+        padding: 20px 40px;
+    }
+}
+
+/* Ultra Large Devices (1601px and above) */
+@media (min-width: 1601px) {
+    .logo-container img {
+        width: 30em;
+    }
+    .grum-title {
+        font-size: 10em;
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+
+    .socials__title {
+        font-size: 7em;
+    }
+
+    .socials__description {
+        font-size: 2.5em;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    .main-title {
+        font-size: 5em;
+        margin-bottom: 1em;
+    }
+
+    .fa-arrow-left {
+        font-size: 1.2em;
+        margin-top: 0.5em;
+    }
+
+    #signature-container {
+        height: 500px;
+
+    }
+
+    button {
+        font-size: 3em;
+        margin-top: 0.5em;
+    }
+
+    .socials__icon {
+        width: 7em;
+        height: 7em;
+    }
+
+    .socials__button {
+        font-size: 1.8em;
+        padding: 25px 50px;
+    }
+}
