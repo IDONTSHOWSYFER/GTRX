@@ -145,9 +145,9 @@ button:focus,
 .header__back-arrow {
     position: absolute;
     left: 25px;
-    top: 25px;
+    margin-top: 15px;
     color: var(--secondary-color);
-    font-size: 3rem;
+    font-size: 2rem;
     cursor: pointer;
     transition: color 0.3s;
 }
@@ -359,61 +359,20 @@ button:focus,
     }
 }
 
-@media (max-width: 480px) {
-    .integration__list.active {
-        grid-template-columns: 1fr;
-    }
-
-    .header__nav {
-        height: 60px;
-        padding: 0 10px;
-    }
-
-    .header__logo img {
-        width: clamp(100px, 20vw, 120px);
-    }
-
-    .header__back-arrow i {
-        font-size: 1.2rem;
-    }
-
-    .integration__title {
-        font-size: 2rem;
-    }
-
-    .integration__description {
-        font-size: 1.2rem;
-    }
-
-    .integration__button {
-        font-size: 0.8rem;
-        padding: 0.5em 1em;
-    }
-
-    .integration__card-title {
-        font-size: 1rem;
-    }
-
-    .integration__card-description {
-        font-size: 0.8rem;
-    }
-
-    .integration__card-image {
-        width: 50px;
-        height: 50px;
-    }
-}
-
 @media (min-width: 321px) and (max-width: 559px) {
     .header__nav {
         height: 7.5vh;
         padding: 0 0.5em;
     }
 
+    .header__back-arrow {
+        top: 0;
+    }
+
     .header__logo img {
         width: 40vw;
         max-width: 150px;
-        margin-top: 0;
+        top: 2em;
     }
 
     .header__link--integrations {
@@ -448,6 +407,14 @@ button:focus,
 }
 
 @media (max-width: 320px) {
+    .header__logo {
+        margin-top: 2em;
+    }
+
+    .header__back-arrow {
+        top: 0em
+    }
+
     .red-title {
         font-size: 1.6em;
     }
