@@ -164,7 +164,7 @@ p,
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 15vh;
+    height: 35vh;
     padding: 0 2vw;
     position: relative;
     z-index: 10;
@@ -1435,7 +1435,7 @@ footer.socials__footer-link a.rednote:hover {
     }
 
     .header__nav {
-        height: 10vh;
+        height: 20vh;
         padding: 0 1em;
     }
 
@@ -1773,6 +1773,11 @@ footer.socials__footer-link a.rednote:hover {
 }
 
 @media (min-width: 1600px) {
+    .header__nav {
+        height: 30vh;
+        padding: 0 1em;
+    }
+
     .header__logo {
         width: 35vw;
     }
