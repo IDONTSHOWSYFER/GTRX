@@ -1300,14 +1300,13 @@ footer.socials__footer-link a.rednote:hover {
 
 @media (max-width: 559px) and (min-width: 321px) {
     .header__nav {
-        height: 10vh;
+        height: 7vh;
         padding: 0 0.5em;
     }
 
     .header__logo img {
         width: 40vw;
         max-width: 150px;
-        margin-top: -2em;
     }
 
     .header__link--integrations {
@@ -1324,7 +1323,7 @@ footer.socials__footer-link a.rednote:hover {
     }
 
     .hero__images {
-        margin-top: 10em;
+        margin-top: 7em;
     }
 
     .hero__button {
@@ -1436,7 +1435,7 @@ footer.socials__footer-link a.rednote:hover {
     }
 
     .header__nav {
-        height: 15vh;
+        height: 10vh;
         padding: 0 1em;
     }
 
@@ -1453,6 +1452,10 @@ footer.socials__footer-link a.rednote:hover {
         max-width: 100%;
         left: 0;
         transform: translateX(0);
+    }
+
+    .hero__images {
+        margin-top: 10em;
     }
 
     .hero__title {
