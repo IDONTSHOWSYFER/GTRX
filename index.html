@@ -11,6 +11,7 @@
         type="font/ttf" />
     <link rel="preload" href="/assets/font/Lacquer/Lacquer-Regular.ttf" as="font" crossorigin type="font/ttf" />
     <link rel="stylesheet" href="/css/styles.min.css" />
+    <audio id="background-audio" src="/assets/audio/gtrx.wav" preload="auto"></audio>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const fadeElements = document.querySelectorAll('.fade-in-element');
@@ -33,6 +34,12 @@
             handleVisibility();
         });
     </script>
+    <script>
+        document.addEventListener('click', function () {
+            const audio = document.getElementById('background-audio');
+            audio.play();
+        });
+    </script>
 </head>
 
 <body>
@@ -53,7 +60,7 @@
                 </div>
                 <div class="hero__content">
                     <h1 class="hero__title">The Rug Kid of Tron</h1>
-                    <a href="/templates/pact.html">
+                    <a href="/templates/deal.html">
                         <button class="hero__button">MAKE A DEAL</button>
                     </a>
                 </div>
@@ -188,14 +195,14 @@
             </div>
         </section>
 
-        <section class="pact-section">
+        <section class="deal-section">
             <div class="container">
-                <h2 class="pact-section__title">MAKE A DEAL !</h2>
-                <p class="pact-section__description">JOIN THE <strong>GRUM CULT</strong> BY MAKING A DEAL USING OUR
+                <h2 class="deal-section__title">MAKE A DEAL !</h2>
+                <p class="deal-section__description">JOIN THE <strong>GRUM CULT</strong> BY MAKING A DEAL USING OUR
                     TOOL.</p>
-                <img class="pact-section__image fade-in-element" src="/assets/img/pact.gif" alt="Pact" />
-                <a href="/templates/pact.html" class="pact-section__link">
-                    <button class="pact-section__button">DEAL TOOL ➜</button>
+                <img class="deal-section__image fade-in-element" src="/assets/img/deal.gif" alt="Deal" />
+                <a href="/templates/deal.html" class="deal-section__link">
+                    <button class="deal-section__button">DEAL TOOL ➜</button>
                 </a>
             </div>
         </section>

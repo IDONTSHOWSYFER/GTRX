@@ -117,6 +117,9 @@ p,
     background: linear-gradient(90deg, rgba(28,28,28,0.8), rgba(0,0,0,0.8));
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
 }
 
 .back-to-top {
@@ -225,7 +228,7 @@ a button:hover {
 .hero__button,
 .utilities__button,
 .buy-section__button,
-.pact-section__button,
+.deal-section__button,
 .tokenomics__button,
 .socials__button {
     background: var(--button-bg);
@@ -239,7 +242,7 @@ a button:hover {
 }
 
 .hero__button:hover,
-.pact-section__button:hover,
+.deal-section__button:hover,
 .tokenomics__button:hover {
     color: white;
     background: var(--button-hover-bg);
@@ -248,7 +251,7 @@ a button:hover {
 }
 
 .hero__button::after,
-.pact-section__button::after,
+.deal-section__button::after,
 .tokenomics__button::after {
     content: '';
     position: absolute;
@@ -262,7 +265,7 @@ a button:hover {
 }
 
 .hero__button:hover::after,
-.pact-section__button:hover::after,
+.deal-section__button:hover::after,
 .tokenomics__button:hover::after {
     transform: translateX(-50%) translateY(0);
 }
@@ -304,6 +307,7 @@ a button:hover {
     justify-content: center;
     align-items: center;
     perspective: 1000px;
+    margin-top: 20em;
 }
 
 .hero__background {
@@ -469,7 +473,6 @@ a button:hover {
 
 .utilities {
     text-align: center;
-    padding: 4em 0;
     width: 100%;
     background-color: #FFFFFF;
     color: var(--secondary-color);
@@ -538,7 +541,7 @@ a button:hover {
     justify-content: center;
     align-items: center; 
     width: 100%;           
-    margin: 2em 0; 
+    margin-top: 2em; 
 }
 
 .utilities__image {
@@ -556,7 +559,6 @@ a button:hover {
 .buy-section {
     background-color: var(--secondary-color);
     text-align: center;
-    padding: 4em 0;
     width: 100%;
     color: var(--text-color);
 }
@@ -637,7 +639,6 @@ a button:hover {
     margin: 0 auto;
     height: auto;
     border-radius: 15px;
-    margin-top: 2em;
     transition: transform var(--transition-speed);
 }
 
@@ -645,14 +646,14 @@ a button:hover {
     transform: scale(1.05);
 }
 
-.pact-section {
+.deal-section {
     text-align: center;
     background-color: #FFFFFF;
     width: 100%;
     color: var(--secondary-color);
 }
 
-.pact-section__title {
+.deal-section__title {
     font-size: 3em;
     color: var(--primary-color);
     margin-bottom: 1em;
@@ -661,7 +662,7 @@ a button:hover {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.pact-section__description {
+.deal-section__description {
     font-size: 1.5em;
     margin-bottom: 2em;
     transition: font-size var(--transition-speed) ease-out;
@@ -669,23 +670,23 @@ a button:hover {
     font-family: var(--font-secondary);
 }
 
-.pact-section__image {
-    width: 80%;
+.deal-section__image {
+    width: 50%;
     height: auto;
     border-radius: 15px;
     margin: 0 auto;
     transition: transform var(--transition-speed);
 }
 
-.pact-section__image:hover {
+.deal-section__image:hover {
     transform: scale(1.05);
 }
 
-.pact-section__link {
+.deal-section__link {
     text-decoration: none;
 }
 
-.pact-section__button {
+.deal-section__button {
     background: var(--button-bg);
     color: var(--button-text);
     font-size: 1.5em;
@@ -697,7 +698,7 @@ a button:hover {
     box-shadow: var(--box-shadow);
 }
 
-.pact-section__button:hover {
+.deal-section__button:hover {
     color: white;
     background: var(--button-hover-bg);
     transform: rotate(2deg);
@@ -927,7 +928,7 @@ a button:hover {
     margin: 0 auto;
     max-width: 50%;
     height: auto;
-    margin-bottom: 60px;
+    margin-bottom: 3em;
 }
 
 .socials__additional-image {
@@ -1206,7 +1207,7 @@ footer.socials__footer-link a.rednote:hover {
 
     .hero__button,
     .tokenomics__button,
-    .pact-section__button {
+    .deal-section__button {
         font-size: 1em;
         padding: 0.4em 0.75em;
         max-width: 140px;
@@ -1240,7 +1241,7 @@ footer.socials__footer-link a.rednote:hover {
         font-family: var(--font-secondary);
     }
 
-    .pact-section__description {
+    .deal-section__description {
         font-size: 0.8em;
         margin-top: 2em;
         color: var(--secondary-color);
@@ -1271,15 +1272,20 @@ footer.socials__footer-link a.rednote:hover {
         gap: 0.5em;
     }
 
-    .pact-section__image {
+    .deal-section__image {
         max-width: 100%;
     }
 
-    .hero__images,
     .hero__content,
     .hero__social-links {
         max-width: 100%;
         padding: 0 0.5em;
+    }
+
+    .hero__images {
+        max-width: 100%;
+        padding: 0 0.5em;
+        margin-top: 5em;
     }
 
     .socials__section-image {
@@ -1290,6 +1296,7 @@ footer.socials__footer-link a.rednote:hover {
         margin-bottom: 40px;
     }
 }
+
 
 @media (max-width: 559px) and (min-width: 321px) {
     .header__nav {
@@ -1314,6 +1321,10 @@ footer.socials__footer-link a.rednote:hover {
         margin-right: 0;
         left: 0;
         transform: translateX(0);
+    }
+
+    .hero__images {
+        margin-top: 10em;
     }
 
     .hero__button {
@@ -1366,13 +1377,18 @@ footer.socials__footer-link a.rednote:hover {
         font-family: var(--font-secondary);
     }
 
-    .pact-section__title {
+    .deal-section__title {
         font-size: 2.5em;
         margin-top: 2em;
         font-family: var(--font-primary);
     }
 
-    .pact-section__button {
+    .deal-section__image {
+        margin-top: -1em;
+        margin-bottom: 1em;
+    }
+
+    .deal-section__button {
         margin-bottom: 2em;
         font-size: 1.5em;
         font-family: var(--font-secondary);
@@ -1503,25 +1519,19 @@ footer.socials__footer-link a.rednote:hover {
         max-width: 100%;
     }
 
-    .pact-section__image  {
-        max-width: 100%;
-        margin-top: -2em;
-        margin-bottom: 2em;
-    }
-
-    .pact-section__title {
+    .deal-section__title {
         font-size: 5em;
         margin-top: 1.5em;
         font-family: var(--font-primary);
     }
 
-    .pact-section__description {
+    .deal-section__description {
         font-size: 2em;
         margin-top: 3em;
         font-family: var(--font-secondary);
     }
 
-    .pact-section__button {
+    .deal-section__button {
         margin-bottom: 5em;
         margin-top: -1em;
         font-size: 2em;
@@ -1553,7 +1563,7 @@ footer.socials__footer-link a.rednote:hover {
 
     .utilities__description,
     .buy-section__description,
-    .pact-section__description,
+    .deal-section__description,
     .tokenomics__description {
         font-size: 2.5em;
         margin-bottom: 3em;
@@ -1581,8 +1591,9 @@ footer.socials__footer-link a.rednote:hover {
         max-width: 100%;
     }
 
-    .pact-section__image {
-        margin-top: -10em;
+    .deal-section__image {
+        margin-top: -5em;
+        margin-bottom: 5em;
     }
 
     .socials__title {
@@ -1654,7 +1665,7 @@ footer.socials__footer-link a.rednote:hover {
 
     .utilities__title,
     .buy-section__title,
-    .pact-section__title,
+    .deal-section__title,
     .tokenomics__title {
         font-size: 5em;
         font-family: var(--font-primary);
@@ -1682,7 +1693,7 @@ footer.socials__footer-link a.rednote:hover {
 
     .utilities__description,
     .buy-section__description,
-    .pact-section__description,
+    .deal-section__description,
     .tokenomics__description {
         font-size: 2em;
         font-family: var(--font-secondary);
@@ -1702,7 +1713,7 @@ footer.socials__footer-link a.rednote:hover {
 
     .utilities__description,
     .buy-section__description,
-    .pact-section__description,
+    .deal-section__description,
     .tokenomics__description {
         font-size: 2.5em;
         margin-bottom: 3em;
@@ -1730,8 +1741,12 @@ footer.socials__footer-link a.rednote:hover {
         max-width: 100%;
     }
 
-    .pact-section__image {
-        margin-top: -10em;
+    .deal-section__image {
+        margin-top: -5em;
+    }
+
+    .deal-section__button {
+        margin-bottom: 5em;
     }
 
     .socials__title {
@@ -1812,13 +1827,13 @@ footer.socials__footer-link a.rednote:hover {
     }
 
     .buy-section__title,
-    .pact-section__title {
+    .deal-section__title {
         font-size: 7em;
         margin-top: 2em;
         font-family: var(--font-primary);
     }
 
-    .pact-section__button {
+    .deal-section__button {
         font-size: 3em;
         margin-top: -1em;
         margin-bottom: 2em;
@@ -1850,7 +1865,7 @@ footer.socials__footer-link a.rednote:hover {
 
     .utilities__description,
     .buy-section__description,
-    .pact-section__description,
+    .deal-section__description,
     .tokenomics__description {
         font-size: 2.5em;
         margin-bottom: 3em;
@@ -1878,8 +1893,9 @@ footer.socials__footer-link a.rednote:hover {
         max-width: 100%;
     }
 
-    .pact-section__image {
-        margin-top: -10em;
+    .deal-section__image {
+        margin-top: -5em;
+        margin-bottom: 5em;
     }
 
     .socials__title {
