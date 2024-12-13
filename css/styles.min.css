@@ -1300,7 +1300,7 @@ footer.socials__footer-link a.rednote:hover {
 
 @media (max-width: 559px) and (min-width: 321px) {
     .header__nav {
-        height: 7vh;
+        height: 10vh;
         padding: 0 0.5em;
     }
 
@@ -1323,7 +1323,7 @@ footer.socials__footer-link a.rednote:hover {
     }
 
     .hero__images {
-        margin-top: 7em;
+        margin-top: 5em;
     }
 
     .hero__button {
