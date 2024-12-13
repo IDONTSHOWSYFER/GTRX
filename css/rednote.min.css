@@ -404,6 +404,14 @@ main {
     }
 }
 
+.chill {
+    width: 200px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (min-width: 1200px) and (max-width: 1599px) {
     .red-title {
         font-size: 2.5em;
@@ -458,7 +466,7 @@ main {
 
 @media (min-width: 321px) and (max-width: 559px) {
     .header__nav {
-        height: 7.5vh;
+        height: 10vh;
         padding: 0 0.5em;
     }
 
