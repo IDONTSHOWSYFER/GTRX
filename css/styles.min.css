@@ -1627,7 +1627,7 @@ footer.socials__footer-link a.rednote:hover {
 
 @media (min-width: 1200px) and (max-width: 1599px) {
     .header__nav {
-        height: 20vh;
+        height: 30vh;
         padding: 0 1em;
     }
 
