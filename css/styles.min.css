@@ -1295,6 +1295,9 @@ footer.socials__footer-link a.rednote:hover {
         height: auto;
         margin-bottom: 40px;
     }
+    footer p {
+        font-size: 10px;
+    }
 }
 
 
@@ -1426,6 +1429,10 @@ footer.socials__footer-link a.rednote:hover {
     .socials__link img {
         width: 5.5em;
     }
+    footer p {
+        font-size: 7px;
+    }
+
 }
 
 @media (min-width: 560px) and (max-width: 1199px) {
