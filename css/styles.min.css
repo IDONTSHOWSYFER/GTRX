@@ -154,6 +154,7 @@ p,
 
 .back-to-top {
     transform: translateY(20px);
+    z-index: 9999;
 }
 
 .back-to-top.show {
@@ -849,7 +850,6 @@ a button:hover {
     width: 100%;
     height: auto;
     border-radius: 0;
-    animation: shake-translate 0.5s infinite, disco 3s infinite alternate;
     filter: brightness(1.2);
     z-index: 1;
     max-width: 100%;
@@ -1147,7 +1147,7 @@ footer.socials__footer-link a.rednote:hover {
 
 @media (hover: hover) and (pointer: fine) {
     #exchanges {
-        cursor: url('/assets/img/cursor.png') 16 16, auto;
+        cursor: url('/assets/img/data/cursor.png') 16 16, auto;
     }
 }
 
