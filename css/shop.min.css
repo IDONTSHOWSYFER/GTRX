@@ -1,0 +1,319 @@
+/* Réinitialisation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  body {
+    background: linear-gradient(135deg, #000000, #ff0000);
+    color: #fff;
+  }
+  
+  /* Wrapper pleine hauteur */
+  .wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* HEADER */
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo img {
+    max-height: 60px;
+  }
+  .password-form {
+    display: flex;
+    align-items: center;
+  }
+  .password-form input[type="password"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+  }
+  .password-form button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ff0000;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  /* Animation de tremblement pour erreur */
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+  .shake {
+    animation: shake 0.5s;
+  }
+  
+  /* MAIN : Contenu centré */
+  main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .coming-soon {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+  }
+  .coming-soon h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  .coming-soon p {
+    margin-bottom: 20px;
+  }
+  .email-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .email-form input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    width: 70%;
+    max-width: 300px;
+    margin-bottom: 10px;
+  }
+  .email-form button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ff0000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* FOOTER : Fixé en bas et centré */
+  footer {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .footer-social a {
+    color: #fff;
+    font-size: 1.8em;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  .footer-powered p {
+    font-size: 1em;
+  }
+  
+  /* Responsive pour petits écrans */
+  @media (max-width: 600px) {
+    header {
+      padding: 10px;
+    }
+    .header-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .logo img {
+      max-height: 50px;
+    }
+    .password-form {
+      margin-top: 5px;
+      align-self: flex-end;
+    }
+    .password-form input[type="password"] {
+      padding: 5px;
+      font-size: 0.8em;
+    }
+    .password-form button {
+      padding: 5px 8px;
+      font-size: 0.8em;
+    }
+    
+    main {
+      padding: 0 10px;
+    }
+    .coming-soon {
+      padding: 15px;
+    }
+    .coming-soon h1 {
+      font-size: 2em;
+    }
+    .coming-soon p {
+      font-size: 0.9em;
+      margin-bottom: 15px;
+    }
+    .email-form input[type="email"] {
+      width: 90%;
+      max-width: 250px;
+      padding: 8px;
+    }
+    .email-form button {
+      padding: 8px 12px;
+      font-size: 0.9em;
+      width: 100%;
+    }
+    
+    footer {
+      bottom: 10px;
+    }
+    .footer-social a {
+      font-size: 1.5em;
+      margin: 0 5px;
+    }
+    .footer-powered p {
+      font-size: 0.9em;
+    }
+  }
+  
+  /* Responsive pour très petits écrans */
+  @media (max-width: 480px) {
+    header {
+      padding: 5px;
+    }
+    .header-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo img {
+      max-height: 40px;
+    }
+    .password-form {
+      width: 100%;
+      justify-content: center;
+      margin-top: 5px;
+    }
+    .password-form input[type="password"] {
+      width: 70%;
+      font-size: 0.75em;
+    }
+    .password-form button {
+      width: 25%;
+      font-size: 0.75em;
+    }
+    
+    main {
+      padding: 0 5px;
+    }
+    .coming-soon {
+      padding: 10px;
+    }
+    .coming-soon h1 {
+      font-size: 1.3em;
+    }
+    .coming-soon p {
+      font-size: 0.7em;
+      margin-bottom: 10px;
+    }
+    .email-form input[type="email"] {
+      width: 95%;
+      max-width: 220px;
+      padding: 7px;
+    }
+    .email-form button {
+      padding: 7px 10px;
+      font-size: 0.8em;
+      width: 100%;
+    }
+    
+    footer {
+      bottom: 5px;
+    }
+    .footer-social a {
+      font-size: 1.3em;
+      margin: 0 3px;
+    }
+    .footer-powered p {
+      font-size: 0.8em;
+    }
+  }
+  
+  /* Styles spécifiques pour la page de remerciement */
+  .thankyou-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #000000, #ff0000);
+  }
+  .thankyou-container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+  }
+  .return-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  
+  /* Responsive pour la page de remerciement */
+  @media (max-width: 600px) {
+    .thankyou-container {
+      padding: 15px;
+    }
+    .thankyou-container h1 {
+      font-size: 2em;
+    }
+    .thankyou-container p {
+      font-size: 0.9em;
+    }
+    .return-button {
+      padding: 8px 16px;
+      font-size: 0.9em;
+    }
+  }
+  @media (max-width: 480px) {
+    .thankyou-container {
+      padding: 10px;
+    }
+    .thankyou-container h1 {
+      font-size: 1.6em;
+    }
+    .thankyou-container p {
+      font-size: 0.8em;
+    }
+    .return-button {
+      padding: 6px 12px;
+      font-size: 0.8em;
+    }
+  }

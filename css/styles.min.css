@@ -814,7 +814,7 @@ a button:hover {
 }
 
 .tokenomics__detail-info {
-    font-size: 1.2em;
+    font-size: 0.8em;
     transition: font-size var(--transition-speed) ease-out;
     font-family: var(--font-secondary);
     -webkit-font-smoothing: antialiased;
@@ -1161,6 +1161,38 @@ footer.socials__footer-link a.rednote:hover {
     }
 }
 
+/* Pour très petits écrans (max-width: 480px) */
+@media (max-width: 480px) {
+    .tokenomics__detail-info {
+      font-size: 0.4rem;
+      padding: 0 0.5em;
+    }
+  }
+  
+  /* Pour écrans petits à moyens (min-width: 481px) et (max-width: 768px) */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .tokenomics__detail-info {
+      font-size: 0.7rem;
+      padding: 0 0.5em;
+    }
+  }
+  
+  /* Pour écrans moyens (min-width: 769px) et (max-width: 1199px) */
+  @media (min-width: 769px) and (max-width: 1199px) {
+    .tokenomics__detail-info {
+      font-size: 0.8rem;
+      padding: 0 0.5em;
+    }
+  }
+  
+  /* Pour grands écrans (min-width: 1200px) */
+  @media (min-width: 1200px) {
+    .tokenomics__detail-info {
+      font-size: 0.9rem;
+      padding: 0;
+    }
+  }
+
 @media (max-width: 320px) {
     footer.socials__footer-link {
         flex-direction: column;
@@ -1254,7 +1286,7 @@ footer.socials__footer-link a.rednote:hover {
     }
 
     .tokenomics__detail-info {
-        font-size: 0.8em;
+        font-size: 0.3em;
         font-family: var(--font-secondary);
     }
 
