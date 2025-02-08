@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coming Soon</title>
-  <!-- Le CSS se trouve ici : /Users/syfer/VsCode/Grum/GTRX/css/shop.min.css -->
+  <!-- CSS is located at /Users/syfer/VsCode/Grum/GTRX/css/shop.min.css -->
   <link rel="stylesheet" href="/css/shop.min.css">
   <link rel="icon" href="/assets/img/data/favicon.png" type="image/x-icon" sizes="16x16" />
-  <!-- Dernière version de Font Awesome -->
+  <!-- Latest version of Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <div class="wrapper">
-    <!-- HEADER : Logo à gauche et formulaire mot de passe en haut à droite -->
+    <!-- HEADER: Logo on the left and password form on the top right -->
     <header>
       <div class="header-container">
         <div class="logo">
@@ -20,14 +20,14 @@
         </div>
         <div class="password-form-container">
           <form class="password-form" action="#" method="post">
-            <input type="password" placeholder="Entrez votre mot de passe" required>
-            <button type="submit">Valider</button>
+            <input type="password" placeholder="Enter your password" required>
+            <button type="submit">Submit</button>
           </form>
         </div>
       </div>
     </header>
 
-    <!-- MAIN : Bloc central avec message et formulaire email -->
+    <!-- MAIN: Central block with message and email form -->
     <main>
       <div class="coming-soon">
         <h1>Opening Soon</h1>
@@ -39,7 +39,7 @@
       </div>
     </main>
 
-    <!-- FOOTER : Réseaux sociaux et texte "Powered by style" -->
+    <!-- FOOTER: Social icons and "Powered by style" text -->
     <footer>
       <div class="footer-social">
         <a href="https://t.me/grumcointrx" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
@@ -53,14 +53,14 @@
     </footer>
   </div>
   <script>
-    // Gestion du formulaire de mot de passe : simulation d'une erreur avec animation de tremblement
+    // Password form: simulate an error with a shake animation
     document.querySelector('.password-form').addEventListener('submit', function(e) {
       e.preventDefault();
       this.classList.add('shake');
       setTimeout(() => { this.classList.remove('shake'); }, 500);
     });
-
-    // Gestion du formulaire email : redirection vers la page de remerciement
+    
+    // Email form: redirect to thankyou page on submit
     document.querySelector('.email-form').addEventListener('submit', function(e) {
       e.preventDefault();
       window.location.href = 'thankyou.html';
