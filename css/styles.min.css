@@ -857,6 +857,104 @@ a button:hover {
     box-shadow: var(--box-shadow);
 }
 
+.playlist {
+    text-align: center;
+    padding: 4em 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .playlist__title {
+    font-size: 3em;
+    color: var(--primary-color);
+    font-family: var(--font-primary);
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .playlist__description {
+    font-size: 1.5em;
+    font-family: var(--font-secondary);
+    margin-bottom: 2em;
+  }
+  
+  .playlist__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 1.25em;
+  }
+  
+  .playlist__video-wrapper {
+    display: inline-block;
+    border: 0.1875em solid var(--primary-color);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+  }
+  
+  #playlist-video {
+    display: block;
+    width: 848px;
+    height: 704px;
+    transition: transform var(--transition-speed);
+  }
+  
+  #playlist-video:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    #playlist-video {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .studio-button {
+    margin-top: 60px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background: linear-gradient(45deg, #E31828, #FF5733);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  }
+  
+  .studio-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #FF5733, #C70039);
+    color: #fff;
+  }
+  
+  #music-toggle {
+    position: fixed;
+    bottom: 80px; 
+    left: 20px;
+    z-index: 9999!important;
+    background: linear-gradient(45deg, #E31828, #FF5733);
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    padding: 0; 
+    border-radius: 50%; 
+    text-decoration: none;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  #music-toggle:hover {
+    transform: scale(1.1);
+  }
+
 .socials {
     text-align: center;
     background-color: var(--primary-color);

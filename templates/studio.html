@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Studio - GTRX</title>
+    <meta name="description" content="Studio pour déposer et écouter vos musiques" />
+    <link rel="icon" href="/assets/img/data/favicon.png" type="image/x-icon" sizes="16x16" />
+    <link rel="stylesheet" href="/css/studio.min.css" />
+    <!-- Ne lance pas l'audio en autoplay -->
+    <audio id="background-audio" src="/assets/audio/gtrx.wav" preload="auto"></audio>
+    <script>
+      // Animation d'apparition des éléments au scroll (inchangée)
+      document.addEventListener("DOMContentLoaded", function () {
+          const fadeElements = document.querySelectorAll('.fade-in-element');
+          function handleVisibility() {
+              const triggerPoint = window.innerHeight * 0.8;
+              fadeElements.forEach(element => {
+                  const elementTop = element.getBoundingClientRect().top;
+                  if (elementTop < triggerPoint) {
+                      element.classList.add('is-visible');
+                  } else {
+                      element.classList.remove('is-visible');
+                  }
+              });
+          }
+          window.addEventListener('scroll', handleVisibility);
+          handleVisibility();
+      });
+    </script>
+  </head>
+  <body>
+    <header class="studio-header">
+      <div class="studio-logo">
+        <img src="/assets/img/data/logo.svg" alt="Logo GTRX">
+      </div>
+      <nav class="studio-nav">
+        <a href="index.html" class="studio-nav-link">Accueil</a>
+        <a href="/templates/integrations.html" class="studio-nav-link">Intégrations</a>
+      </nav>
+    </header>
+    <main>
+      <section class="studio-hero">
+        <div class="container">
+          <h1 class="studio-title">Studio</h1>
+          <p class="studio-subtitle">Déposez, écoutez et partagez vos musiques</p>
+        </div>
+      </section>
+      <section class="studio-tracks">
+        <div class="container">
+          <h2 class="tracks-title">Mes Pistes</h2>
+          <div class="tracks-grid">
+            <!-- Exemple de piste -->
+            <div class="track-item">
+              <h3 class="track-title">Titre 1</h3>
+              <audio controls>
+                <source src="/assets/audio/sample1.wav" type="audio/wav">
+                Votre navigateur ne supporte pas la balise audio.
+              </audio>
+            </div>
+            <div class="track-item">
+              <h3 class="track-title">Titre 2</h3>
+              <audio controls>
+                <source src="/assets/audio/sample2.wav" type="audio/wav">
+                Votre navigateur ne supporte pas la balise audio.
+              </audio>
+            </div>
+            <!-- Ajoutez d'autres pistes au besoin -->
+          </div>
+        </div>
+      </section>
+      <section class="studio-upload">
+        <div class="container">
+          <h2 class="upload-title">Déposer une nouvelle piste</h2>
+          <form class="upload-form">
+            <label for="track-file">Choisissez un fichier audio</label>
+            <input type="file" id="track-file" accept="audio/*">
+            <button type="submit" class="upload-button">Envoyer</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="studio-footer">
+      <div class="container">
+        <p>© 2023 GTRX. Tous droits réservés.</p>
+      </div>
+    </footer>
+    
+    <!-- Bouton Back-to-Top (bas à droite) -->
+    <a href="#" class="back-to-top" aria-label="Retour en haut">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 4V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M5 11L12 4L19 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </a>
+    
+    <!-- Bouton musique de fond (bas à gauche) -->
+    <button id="music-toggle" aria-label="Toggle Background Music">
+      &#9834;
+    </button>
+    
+    <script>
+      // Bouton back-to-top
+      document.addEventListener("DOMContentLoaded", function () {
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            backToTopButton.classList.add('show');
+          } else {
+            backToTopButton.classList.remove('show');
+          }
+        });
+  
+        backToTopButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+    </script>
+    <script>
+      // Gestion du bouton musique de fond
+      document.addEventListener("DOMContentLoaded", function() {
+        const musicToggle = document.getElementById("music-toggle");
+        const backgroundAudio = document.getElementById("background-audio");
+        let isBackgroundPlaying = false;
+        if (musicToggle && backgroundAudio) {
+          musicToggle.addEventListener("click", function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (!isBackgroundPlaying) {
+              backgroundAudio.play().then(() => {
+                isBackgroundPlaying = true;
+                // Style quand l'audio est en lecture : fond blanc, icône rouge
+                musicToggle.style.background = "#fff";
+                musicToggle.style.color = "#E31828";
+              }).catch(err => console.error("Erreur lecture audio:", err));
+            } else {
+              backgroundAudio.pause();
+              isBackgroundPlaying = false;
+              // Style quand l'audio est arrêté : fond dégradé rouge, icône blanche
+              musicToggle.style.background = "linear-gradient(45deg, #E31828, #FF5733)";
+              musicToggle.style.color = "#fff";
+            }
+          });
+        }
+      });
+    </script>
+    <script src="/js/script.min.js" async crossorigin></script>
+  </body>
+</html>

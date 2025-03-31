@@ -1,306 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>GTRX - We're all GRUM</title>
-    <meta name="description" content="A degenerate cat with anger issues." />
-    <link rel="icon" href="/assets/img/data/favicon.png" type="image/x-icon" sizes="16x16" />
-    <link rel="preload" href="/assets/font/Sour_Gummy/static/SourGummy-Black.ttf" as="font" crossorigin
-        type="font/ttf" />
-    <link rel="preload" href="/assets/font/Lacquer/Lacquer-Regular.ttf" as="font" crossorigin type="font/ttf" />
-    <link rel="stylesheet" href="/css/styles.min.css" />
-    <audio id="background-audio" src="/assets/audio/gtrx.wav" preload="auto"></audio>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const fadeElements = document.querySelectorAll('.fade-in-element');
-
-            function handleVisibility() {
-                const triggerPoint = window.innerHeight * 0.8;
-
-                fadeElements.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-
-                    if (elementTop < triggerPoint) {
-                        element.classList.add('is-visible');
-                    } else {
-                        element.classList.remove('is-visible');
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', handleVisibility);
-            handleVisibility();
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GTRX - We're all GRUM lol</title>
+  <meta name="description" content="A degenerate cat with anger issues." />
+  <link rel="icon" href="/assets/img/data/favicon.png" sizes="16x16" />
+  <link rel="preload" href="/assets/font/Sour_Gummy/static/SourGummy-Black.ttf" as="font" crossorigin type="font/ttf" />
+  <link rel="preload" href="/assets/font/Lacquer/Lacquer-Regular.ttf" as="font" crossorigin type="font/ttf" />
+  <link rel="stylesheet" href="/css/styles.min.css" />
+  <audio id="background-audio" src="/assets/audio/gtrx.wav" preload="auto"></audio>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const fadeElements = document.querySelectorAll('.fade-in-element');
+      function handleVisibility(){
+        const triggerPoint = window.innerHeight * 0.8;
+        fadeElements.forEach(el=>{
+          const top = el.getBoundingClientRect().top;
+          if(top < triggerPoint){ el.classList.add('is-visible'); } else { el.classList.remove('is-visible'); }
         });
-    </script>
-    <script>
-        document.addEventListener('click', function () {
-            const audio = document.getElementById('background-audio');
-            audio.play();
-        });
-    </script>
+      }
+      window.addEventListener('scroll', handleVisibility);
+      handleVisibility();
+    });
+  </script>
 </head>
-
 <body>
-    <main>
-        <header class="header">
-            <nav class="header__nav">
-                <div class="header__logo">
-                    <img src="/assets/img/data/logo.svg" alt="Logo">
-                </div>
-                <a href="/templates/integrations.html" class="header__link header__link--integrations">INTEGRATION ➜</a>
-            </nav>
-        </header>
-
-        <section class="hero" id="hero">
-            <div class="container">
-                <div class="hero__images">
-                    <img src="/assets/img/data/spiral.png" alt="Spiral">
-                </div>
-                <div class="hero__content">
-                    <h1 class="hero__title">The Rug Kid of Tron</h1>
-                    <a href="/templates/deal.html">
-                        <button class="hero__button">MAKE A DEAL</button>
-                    </a>
-                </div>
-                <div class="hero__social-links">
-                    <a href="https://x.com/grumtrx" target="_blank" class="social-link">
-                        <img src="/assets/img/integrations/featured/x.svg" alt="X" />
-                    </a>
-                    <a href="https://t.me/grumtrx" target="_blank" class="social-link">
-                        <img src="/assets/img/integrations/featured/telegram.svg" alt="Telegram" />
-                    </a>
-                    <a href="https://www.instagram.com/grumtrx" target="_blank" class="social-link">
-                        <img src="/assets/img/integrations/featured/instagram.svg" alt="Instagram" />
-                    </a>
-                    <a href="https://linktr.ee/grumtrx" target="_blank" class="social-link">
-                        <img src="/assets/img/integrations/featured/linktree.svg" alt="Linktree" />
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <div class="hero__marquee">
-            <div class="container">
-                <div class="marquee__content">
-                    <span>I AM GRUM, YOU ARE GRUM, WE ARE GTRX !</span>
-                    <span>I AM GRUM, YOU ARE GRUM, WE ARE GTRX !</span>
-                    <span>I AM GRUM, YOU ARE GRUM, WE ARE GTRX !</span>
-                    <span>I AM GRUM, YOU ARE GRUM, WE ARE GTRX !</span>
-                    <span>I AM GRUM, YOU ARE GRUM, WE ARE GTRX !</span>
-                </div>
-            </div>
+  <main>
+    <header class="header">
+      <nav class="header__nav">
+        <div class="header__logo">
+          <img src="/assets/img/data/logo.svg" alt="Logo">
         </div>
-
-        <section class="exchanges" id="exchanges">
-            <div class="container">
-                <h2 class="exchanges__title">EXCHANGES</h2>
-                <p class="exchanges__description">Gtrx is available for trading on Fair Launch Platform.</p>
-                <div class="exchanges__grid">
-                    <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq" target="_blank" rel="noreferrer noopener" class="exchanges__link fade-in-element">
-                        <img src="/assets/img/data/sunpump.svg" alt="SunPump" />
-                    </a>
-                    <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq" target="_blank" rel="noreferrer noopener" class="exchanges__link fade-in-element">
-                        <img src="/assets/img/data/soon.svg" alt="Coming Soon" />
-                    </a>
-                    <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq" target="_blank" rel="noreferrer noopener" class="exchanges__link fade-in-element">
-                        <img src="/assets/img/data/soon.svg" alt="Coming Soon" />
-                    </a>
-                    <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq" target="_blank" rel="noreferrer noopener" class="exchanges__link fade-in-element">
-                        <img src="/assets/img/data/soon.svg" alt="Coming Soon" />
-                    </a>
-                    <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq" target="_blank" rel="noreferrer noopener" class="exchanges__link fade-in-element">
-                        <img src="/assets/img/data/soon.svg" alt="Coming Soon" />
-                    </a>
-                    <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq" target="_blank" rel="noreferrer noopener" class="exchanges__link fade-in-element">
-                        <img src="/assets/img/data/soon.svg" alt="Coming Soon" />
-                    </a>
-                </div>
-                <p class="exchanges__note">More listings are on the way.</p>
-            </div>
-        </section>
-        <div class="artwork-container">
-            <img class="fade-in-element" src="/assets/img/data/artwork.svg" alt="Artwork" />
+        <a href="/templates/integrations.html" class="header__link header__link--integrations">INTEGRATION ➜</a>
+      </nav>
+    </header>
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero__images">
+          <img src="/assets/img/data/spiral.png" alt="Spiral">
         </div>
-        <section class="utilities">
-            <div class="container">
-                <h2 class="utilities__title">GTRX UTILITIES</h2>
-                <p class="utilities__description">Seamlessly Integrated and Community Powered.</p>
-                <div class="utilities__grid">
-                    <div class="utilities__card fade-in-element">
-                        <h3 class="utilities__card-title">Expanding Ecosystem</h3>
-                        <p class="utilities__card-description">GTRX ecosystem continues to grow with partnerships across
-                            CEXs, DEXs, and even travel platforms...</p>
-                    </div>
-                    <div class="utilities__card fade-in-element">
-                        <h3 class="utilities__card-title">Community-Driven Support</h3>
-                        <p class="utilities__card-description">GTRX thrives on strong community backing, with continuous
-                            support from both crypto enthusiasts...</p>
-                    </div>
-                    <div class="utilities__card fade-in-element">
-                        <h3 class="utilities__card-title">Robust Integrations</h3>
-                        <p class="utilities__card-description">GTRX has established integrations with top exchanges,
-                            wallets, and services in the crypto space...</p>
-                        <a href="/templates/integrations.html">
-                            <button class="utilities__button fade-in-element">INTEGRATIONS</button>
-                        </a>
-                    </div>
-                </div>
+        <div class="hero__content">
+          <h1 class="hero__title">The Rug Kid of Tron lol</h1>
+          <a href="/templates/deal.html">
+            <button class="hero__button">MAKE A DEAL</button>
+          </a>
+        </div>
+        <div class="hero__social-links">
+          <a href="https://x.com/grumtrx" target="_blank" class="social-link">
+            <img src="/assets/img/integrations/featured/x.svg" alt="X">
+          </a>
+          <a href="https://t.me/grumtrx" target="_blank" class="social-link">
+            <img src="/assets/img/integrations/featured/telegram.svg" alt="Telegram">
+          </a>
+          <a href="https://www.instagram.com/grumtrx" target="_blank" class="social-link">
+            <img src="/assets/img/integrations/featured/instagram.svg" alt="Instagram">
+          </a>
+          <a href="https://linktr.ee/grumtrx" target="_blank" class="social-link">
+            <img src="/assets/img/integrations/featured/linktree.svg" alt="Linktree">
+          </a>
+        </div>
+      </div>
+    </section>
+    <div class="hero__marquee">
+      <div class="container">
+        <div class="marquee__content">
+          <span>I AM GRUM, YOU ARE GRUM, WE ARE GTRX !</span>
+          <span>I AM GRUM, YOU ARE GRUM, WE ARE GTRX !</span>
+          <span>I AM GRUM, YOU ARE GRUM, WE ARE GTRX !</span>
+          <span>I AM GRUM, YOU ARE GRUM, WE ARE GTRX !</span>
+          <span>I AM GRUM, YOU ARE GRUM, WE ARE GTRX !</span>
+        </div>
+      </div>
+    </div>
+    <section class="exchanges" id="exchanges">
+      <div class="container">
+        <h2 class="exchanges__title">EXCHANGES</h2>
+        <p class="exchanges__description">Gtrx is available for trading on Fair Launch Platform.</p>
+        <div class="exchanges__grid">
+          <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq" target="_blank" rel="noreferrer noopener" class="exchanges__link fade-in-element">
+            <img src="/assets/img/data/sunpump.svg" alt="SunPump">
+          </a>
+          <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq" target="_blank" rel="noreferrer noopener" class="exchanges__link fade-in-element">
+            <img src="/assets/img/data/soon.svg" alt="Coming Soon">
+          </a>
+          <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq" target="_blank" rel="noreferrer noopener" class="exchanges__link fade-in-element">
+            <img src="/assets/img/data/soon.svg" alt="Coming Soon">
+          </a>
+          <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq" target="_blank" rel="noreferrer noopener" class="exchanges__link fade-in-element">
+            <img src="/assets/img/data/soon.svg" alt="Coming Soon">
+          </a>
+          <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq" target="_blank" rel="noreferrer noopener" class="exchanges__link fade-in-element">
+            <img src="/assets/img/data/soon.svg" alt="Coming Soon">
+          </a>
+          <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq" target="_blank" rel="noreferrer noopener" class="exchanges__link fade-in-element">
+            <img src="/assets/img/data/soon.svg" alt="Coming Soon">
+          </a>
+        </div>
+        <p class="exchanges__note">More listings are on the way.</p>
+      </div>
+    </section>
+    <div class="artwork-container">
+      <img class="fade-in-element" src="/assets/img/data/artwork.svg" alt="Artwork">
+    </div>
+    <section class="utilities">
+      <div class="container">
+        <h2 class="utilities__title">GTRX UTILITIES</h2>
+        <p class="utilities__description">Seamlessly Integrated and Community Powered.</p>
+        <div class="utilities__grid">
+          <div class="utilities__card fade-in-element">
+            <h3 class="utilities__card-title">Expanding Ecosystem</h3>
+            <p class="utilities__card-description">GTRX ecosystem continues to grow with partnerships across CEXs, DEXs, and even travel platforms...</p>
+          </div>
+          <div class="utilities__card fade-in-element">
+            <h3 class="utilities__card-title">Community-Driven Support</h3>
+            <p class="utilities__card-description">GTRX thrives on strong community backing, with continuous support from both crypto enthusiasts...</p>
+          </div>
+          <div class="utilities__card fade-in-element">
+            <h3 class="utilities__card-title">Robust Integrations</h3>
+            <p class="utilities__card-description">GTRX has established integrations with top exchanges, wallets, and services in the crypto space...</p>
+            <a href="/templates/integrations.html">
+              <button class="utilities__button fade-in-element">INTEGRATIONS</button>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="utilities-container">
+        <img src="/assets/img/data/utilities.svg" alt="Grum" class="fade-in-element utilities__image">
+      </div>
+    </section>
+    <section class="buy-section" id="buy">
+      <div class="container">
+        <h2 class="buy-section__title">HOW TO BUY ?</h2>
+        <p class="buy-section__description">Follow these easy steps to become a Gtrx holder.</p>
+        <div class="buy-section__steps">
+          <div class="buy-section__step fade-in-element">
+            <div class="buy-section__step-flex">
+              <strong class="buy-section__step-number">1.</strong>
+              <p class="buy-section__step-title">Create a wallet with TronLink</p>
             </div>
-            <div class="utilities-container">
-                <img src="/assets/img/data/utilities.svg" alt="Grum" class="fade-in-element utilities__image">
+            <p class="buy__p">Visit <a href="https://www.tronlink.org/" target="_blank">tronlink.app</a> and follow the simple steps to create a new account with the TronLink app or browser extension.</p>
+          </div>
+          <div class="buy-section__step fade-in-element">
+            <div class="buy-section__step-flex">
+              <strong class="buy-section__step-number">2.</strong>
+              <p class="buy-section__step-title">Get some $TRX</p>
             </div>
-        </section>
-        <section class="buy-section" id="buy">
-            <div class="container">
-                <h2 class="buy-section__title">HOW TO BUY ?</h2>
-                <p class="buy-section__description">Follow these easy steps to become a Gtrx holder.</p>
-                <div class="buy-section__steps">
-                    <div class="buy-section__step fade-in-element">
-                        <div class="buy-section__step-flex">
-                            <strong class="buy-section__step-number">1.</strong>
-                            <p class="buy-section__step-title">Create a wallet with TronLink</p>
-                        </div>
-                        <p class="buy__p">Visit <a href="https://www.tronlink.org/" target="_blank">tronlink.app</a> and
-                            follow the simple steps to create a new account with the TronLink app or browser extension.
-                        </p>
-                    </div>
-                    <div class="buy-section__step fade-in-element">
-                        <div class="buy-section__step-flex">
-                            <strong class="buy-section__step-number">2.</strong>
-                            <p class="buy-section__step-title">Get some $TRX</p>
-                        </div>
-                        <p class="buy__p">Tap the BUY button in the app to purchase Tron or deposit <span
-                                class="highlight">$TRX</span> to your TronLink wallet from the crypto exchange of your
-                            choice.</p>
-                    </div>
-                    <div class="buy-section__step fade-in-element">
-                        <div class="buy-section__step-flex">
-                            <strong class="buy-section__step-number">3.</strong>
-                            <p class="buy-section__step-title">Swap $TRX for $GTRX</p>
-                        </div>
-                        <p class="buy__p">Tap the SWAP icon in your TronLink wallet and paste the <span
-                                class="highlight">$GTRX</span> token address. Swap your $TRX for <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq">$GTRX</a>.</p>
-                    </div>
-                    <div class="buy-section__step fade-in-element">
-                        <div class="buy-section__step-flex">
-                            <strong class="buy-section__step-number">4.</strong>
-                            <p class="buy-section__step-title">You are now a $GTRX holder !</p>
-                        </div>
-                        <p class="buy__p">Welcome to the <span class="highlight">Grumpy Cult</span> !</p>
-                    </div>
-                </div>
-                <img class="buy-section__image fade-in-element" src="/assets/img/data/teacher.svg" alt="Teacher" />
+            <p class="buy__p">Tap the BUY button in the app to purchase Tron or deposit <span class="highlight">$TRX</span> to your TronLink wallet from the crypto exchange of your choice.</p>
+          </div>
+          <div class="buy-section__step fade-in-element">
+            <div class="buy-section__step-flex">
+              <strong class="buy-section__step-number">3.</strong>
+              <p class="buy-section__step-title">Swap $TRX for $GTRX</p>
             </div>
-        </section>
-
-        <section class="deal-section">
-            <div class="container">
-                <h2 class="deal-section__title">MAKE A DEAL !</h2>
-                <p class="deal-section__description">JOIN THE <strong>GRUM CULT</strong> BY MAKING A DEAL USING OUR
-                    TOOL.</p>
-                <img class="deal-section__image fade-in-element" src="/assets/img/data/deal.gif" alt="Deal" />
-                <a href="/templates/deal.html" class="deal-section__link">
-                    <button class="deal-section__button">DEAL TOOL ➜</button>
-                </a>
+            <p class="buy__p">Tap the SWAP icon in your TronLink wallet and paste the <span class="highlight">$GTRX</span> token address. Swap your $TRX for <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq">$GTRX</a>.</p>
+          </div>
+          <div class="buy-section__step fade-in-element">
+            <div class="buy-section__step-flex">
+              <strong class="buy-section__step-number">4.</strong>
+              <p class="buy-section__step-title">You are now a $GTRX holder !</p>
             </div>
-        </section>
-
-        <section class="tokenomics" id="tokenomics">
-            <div class="container">
-                <h2 class="tokenomics__title">TOKENOMICS</h2>
-                <p class="tokenomics__description">GRUM MADE 1 BILLION <span class="highlight">$GTRX</span> TOKENS BUT
-                    HE'S A <span class="highlight">GREEDY SON OF A BITCH</span> AND WANTS TO KEEP THEM ALL TO HIMSELF.
-                </p>
-                <div class="tokenomics__container">
-                    <img src="/assets/img/data/grumalert.svg" class="tokenomics__image" alt="GRUM">
-                    <div class="tokenomics__details">
-                        <div class="tokenomics__detail fade-in-element">
-                            <h3 class="tokenomics__detail-title">TOTAL SUPPLY</h3>
-                            <p class="tokenomics__detail-info">1,000,000,000 $GTRX</p>
-                        </div>
-                        <div class="tokenomics__detail fade-in-element">
-                            <h3 class="tokenomics__detail-title">TOKEN ADDRESS</h3>
-                            <p class="tokenomics__detail-info">TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq</p>
-                        </div>
-                    </div>
-                </div>
-                <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq" target="_blank" class="tokenomics__buy-link">
-                    <button class="tokenomics__button">BUY $GTRX NOW !</button>
-                </a>
-                <img src="/assets/img/data/grumpies.gif" class="tokenomics__additional-image" alt="#GRUMPIES">
+            <p class="buy__p">Welcome to the <span class="highlight">Grumpy Cult</span> !</p>
+          </div>
+        </div>
+        <img class="buy-section__image fade-in-element" src="/assets/img/data/teacher.svg" alt="Teacher">
+      </div>
+    </section>
+    <section class="deal-section">
+      <div class="container">
+        <h2 class="deal-section__title">MAKE A DEAL !</h2>
+        <p class="deal-section__description">JOIN THE <strong>GRUM CULT</strong> BY MAKING A DEAL USING OUR TOOL.</p>
+        <img class="deal-section__image fade-in-element" src="/assets/img/data/deal.gif" alt="Deal">
+        <a href="/templates/deal.html" class="deal-section__link">
+          <button class="deal-section__button">DEAL TOOL ➜</button>
+        </a>
+      </div>
+    </section>
+    <section class="tokenomics" id="tokenomics">
+      <div class="container">
+        <h2 class="tokenomics__title">TOKENOMICS</h2>
+        <p class="tokenomics__description">GRUM MADE 1 BILLION <span class="highlight">$GTRX</span> TOKENS BUT HE'S A <span class="highlight">GREEDY SON OF A BITCH</span> AND WANTS TO KEEP THEM ALL TO HIMSELF.</p>
+        <div class="tokenomics__container">
+          <img src="/assets/img/data/grumalert.svg" class="tokenomics__image" alt="GRUM">
+          <div class="tokenomics__details">
+            <div class="tokenomics__detail fade-in-element">
+              <h3 class="tokenomics__detail-title">TOTAL SUPPLY</h3>
+              <p class="tokenomics__detail-info">1,000,000,000 $GTRX</p>
             </div>
-        </section>
-
-        <section class="socials">
-            <div class="container">
-                <h2 class="socials__title">SOCIALS</h2>
-                <p class="socials__description">JOIN THE GRUMPY CULT !</p>
-                <div class="socials__links">
-                    <a href="https://twitter.com/grumtrx" target="_blank" class="socials__link">
-                        <img src="/assets/img/integrations/featured/x.svg" alt="X" class="socials__icon" />
-                    </a>
-                    <a href="https://t.me/grumtrx" target="_blank" class="socials__link">
-                        <img src="/assets/img/integrations/featured/telegram.svg" alt="Telegram" class="socials__icon" />
-                    </a>
-                    <a href="https://www.instagram.com/grumtrx" target="_blank" class="socials__link">
-                        <img src="/assets/img/integrations/featured/instagram.svg" alt="Instagram" class="socials__icon" />
-                    </a>
-                    <a href="https://linktr.ee/grumtrx" target="_blank" class="socials__link">
-                        <img src="/assets/img/integrations/featured/linktree.svg" alt="Linktree" class="socials__icon" />
-                    </a>
-                </div>
-                <a href="#" target="_blank" class="socials__action-link"></a>
-                <p>$GTRX IS A SHITCOIN WITH NO GUARANTEED FINANCIAL RETURNS.<br> INVEST AT YOUR OWN RISK !</p>
+            <div class="tokenomics__detail fade-in-element">
+              <h3 class="tokenomics__detail-title">TOKEN ADDRESS</h3>
+              <p class="tokenomics__detail-info">TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq</p>
             </div>
-            <img src="/assets/img/data/moto.png" alt="Moto" class="socials__section-image" />
-        </section>
-
-        <footer class="socials__footer-link">
-            <p>TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq</p>
-            <a href="/templates/rednote.html" class="rednote">REDNOTE</a>
-        </footer>
-    </main>
-
-    <a href="#" class="back-to-top" aria-label="Retour en haut">
-
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 4V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M5 11L12 4L19 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-        </svg>
-    </a>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const backToTopButton = document.querySelector('.back-to-top');
-    
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    backToTopButton.classList.add('show');
-                } else {
-                    backToTopButton.classList.remove('show');
-                }
-            });
-    
-            backToTopButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-                backToTopButton.classList.add('clicked');
-    
-                window.addEventListener('scroll', function onScroll() {
-                    if (window.scrollY === 0) {
-                        backToTopButton.classList.remove('clicked');
-                        window.removeEventListener('scroll', onScroll);
-                    }
-                });
-            });
+          </div>
+        </div>
+        <a href="https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq" target="_blank" class="tokenomics__buy-link">
+          <button class="tokenomics__button">BUY $GTRX NOW !</button>
+        </a>
+        <img src="/assets/img/data/grumpies.gif" class="tokenomics__additional-image" alt="#GRUMPIES">
+      </div>
+    </section>
+    <section class="playlist" id="playlist">
+      <div class="container">
+        <h2 class="playlist__title">Feel the Beat</h2>
+        <p class="playlist__description">Click the video (or the play icon) to start/stop the vibe.</p>
+        <div class="playlist__content" style="flex-direction: column; align-items: center;">
+          <div class="playlist__video-wrapper" style="position: relative;">
+            <video id="playlist-video" loop preload="auto" controls style="cursor: pointer;">
+              <source src="/assets/video/lofi.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div id="playlist-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); cursor: pointer; transition: opacity 0.3s ease;">
+              <button id="overlay-play-button" style="background: none; border: none; color: #fff; font-size: 48px;">&#9658;</button>
+            </div>
+            <audio id="playlist-audio" src="/assets/audio/lofi.wav" preload="auto"></audio>
+          </div>
+          <!-- <button id="studio-button" class="studio-button" onclick="window.location.href='/templates/studio.html'">ENTER THE STUDIO</button> -->
+        </div>
+      </div>
+    </section>
+    <section class="socials">
+      <div class="container">
+        <h2 class="socials__title">SOCIALS</h2>
+        <p class="socials__description">JOIN THE GRUMPY CULT !</p>
+        <div class="socials__links">
+          <a href="https://twitter.com/grumtrx" target="_blank" class="socials__link">
+            <img src="/assets/img/integrations/featured/x.svg" alt="X" class="socials__icon">
+          </a>
+          <a href="https://t.me/grumtrx" target="_blank" class="socials__link">
+            <img src="/assets/img/integrations/featured/telegram.svg" alt="Telegram" class="socials__icon">
+          </a>
+          <a href="https://www.instagram.com/grumtrx" target="_blank" class="socials__link">
+            <img src="/assets/img/integrations/featured/instagram.svg" alt="Instagram" class="socials__icon">
+          </a>
+          <a href="https://linktr.ee/grumtrx" target="_blank" class="socials__link">
+            <img src="/assets/img/integrations/featured/linktree.svg" alt="Linktree" class="socials__icon">
+          </a>
+        </div>
+        <a href="#" target="_blank" class="socials__action-link"></a>
+        <p>$GTRX IS A SHITCOIN WITH NO GUARANTEED FINANCIAL RETURNS.<br> INVEST AT YOUR OWN RISK !</p>
+      </div>
+      <img src="/assets/img/data/moto.png" alt="Moto" class="socials__section-image">
+    </section>
+    <footer class="socials__footer-link">
+      <p>TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq</p>
+      <a href="/templates/rednote.html" class="rednote">REDNOTE</a>
+    </footer>
+  </main>
+  <a href="#" class="back-to-top" aria-label="Retour en haut">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 4V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M5 11L12 4L19 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </a>
+  <button id="music-toggle" aria-label="Toggle Background Music" style="position: fixed; bottom: 80px; left: 20px; z-index: 9999!important; background: linear-gradient(45deg, #E31828, #FF5733); color: #fff; width: 60px; height: 60px; border: none; border-radius: 50%; cursor: pointer; font-size: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+    &#9834;
+  </button>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const backToTopButton = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', ()=>{
+        if(window.scrollY > 300){ backToTopButton.classList.add('show'); } else { backToTopButton.classList.remove('show'); }
+      });
+      backToTopButton.addEventListener('click', e=>{
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const fadeElements = document.querySelectorAll('.fade-in-element');
+      function handleVisibility(){
+        const trigger = window.innerHeight * 0.8;
+        fadeElements.forEach(el=>{
+          const top = el.getBoundingClientRect().top;
+          if(top < trigger){ el.classList.add('is-visible'); } else { el.classList.remove('is-visible'); }
         });
-    </script>
-    <script src="/js/script.min.js" async crossorigin></script>
+      }
+      window.addEventListener('scroll', handleVisibility);
+      handleVisibility();
+      const playlistVideo = document.getElementById("playlist-video");
+      const playlistAudio = document.getElementById("playlist-audio");
+      const playlistOverlay = document.getElementById("playlist-overlay");
+      function syncAudio(){ playlistAudio.currentTime = playlistVideo.currentTime; }
+      function updateOverlay(){
+        const btn = document.getElementById("overlay-play-button");
+        btn.innerHTML = playlistVideo.paused ? "&#9658;" : "&#10074;&#10074;";
+      }
+      function togglePlay(){
+        if(playlistVideo.paused){
+          playlistVideo.play().then(()=>{
+            syncAudio();
+            return playlistAudio.play();
+          }).then(()=>{
+            playlistOverlay.style.opacity = "0";
+            playlistOverlay.style.pointerEvents = "none";
+            updateOverlay();
+          }).catch(err=>console.error(err));
+        } else {
+          playlistVideo.pause();
+          playlistAudio.pause();
+          playlistOverlay.style.opacity = "1";
+          playlistOverlay.style.pointerEvents = "auto";
+          updateOverlay();
+        }
+      }
+      if(playlistVideo && playlistAudio && playlistOverlay){
+        playlistVideo.addEventListener("play", function(){
+          syncAudio();
+          playlistAudio.play().catch(err=>console.error(err));
+          playlistOverlay.style.opacity = "0";
+          playlistOverlay.style.pointerEvents = "none";
+          updateOverlay();
+        });
+        playlistVideo.addEventListener("pause", function(){
+          playlistAudio.pause();
+          playlistOverlay.style.opacity = "1";
+          playlistOverlay.style.pointerEvents = "auto";
+          updateOverlay();
+        });
+        playlistVideo.addEventListener("seeking", function(){ syncAudio(); });
+        playlistVideo.addEventListener("timeupdate", function(){
+          if(Math.abs(playlistAudio.currentTime - playlistVideo.currentTime) > 0.3){ syncAudio(); }
+        });
+        playlistOverlay.addEventListener("click", function(e){
+          e.stopPropagation();
+          togglePlay();
+        });
+      }
+      const musicToggle = document.getElementById("music-toggle");
+      const backgroundAudio = document.getElementById("background-audio");
+      let isBackgroundPlaying = false;
+      if(musicToggle && backgroundAudio){
+        musicToggle.addEventListener("click", function(e){
+          e.preventDefault();
+          e.stopPropagation();
+          if(!isBackgroundPlaying){
+            backgroundAudio.play().then(()=>{
+              isBackgroundPlaying = true;
+              musicToggle.style.background = "#fff";
+              musicToggle.style.color = "#E31828";
+            }).catch(err=>console.error(err));
+          } else {
+            backgroundAudio.pause();
+            isBackgroundPlaying = false;
+            musicToggle.style.background = "linear-gradient(45deg, #E31828, #FF5733)";
+            musicToggle.style.color = "#fff";
+          }
+          return false;
+        });
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const canvas = document.getElementById('signature-pad');
+      const button = document.getElementById('action-button');
+      const signaturePad = new SignaturePad(canvas, {backgroundColor:'rgba(255,255,255,1)', penColor:'black'});
+      function resizeCanvas(){
+        const ratio = Math.max(window.devicePixelRatio||1,1);
+        canvas.width = canvas.offsetWidth * ratio;
+        canvas.height = canvas.offsetHeight * ratio;
+        canvas.getContext('2d').scale(ratio, ratio);
+        signaturePad.clear();
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+      function updateButton(){
+        if(signaturePad.isEmpty()){
+          button.textContent = 'SIGN HERE';
+          button.disabled = true;
+        } else {
+          button.textContent = 'SEND PACT';
+          button.disabled = false;
+        }
+      }
+      canvas.addEventListener('mouseup', updateButton);
+      canvas.addEventListener('touchend', updateButton);
+      canvas.addEventListener('mouseout', updateButton);
+      function openLinks(){
+        const url1 = 'https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq';
+        const url2 = 'https://t.me/grumcoin';
+        window.open(url1,'_blank');
+        setTimeout(()=>{window.open(url2,'_blank');},100);
+      }
+      button.addEventListener('click', function(){
+        if(!signaturePad.isEmpty()) openLinks();
+      });
+      canvas.addEventListener('touchstart', function(e){
+        e.preventDefault();
+      }, {passive:false});
+    });
+  </script>
+  <script src="/js/script.min.js" async crossorigin></script>
 </body>
-
 </html>
