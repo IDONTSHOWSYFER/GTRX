@@ -209,9 +209,6 @@
               <source src="/assets/video/lofi.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <div id="playlist-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); cursor: pointer; transition: opacity 0.3s ease;">
-              <button id="overlay-play-button" style="background: none; border: none; color: #fff; font-size: 48px;">&#9658;</button>
-            </div>
             <audio id="playlist-audio" src="/assets/audio/lofi.wav" preload="auto"></audio>
           </div>
           <!-- <button id="studio-button" class="studio-button" onclick="window.location.href='/templates/studio.html'">ENTER THE STUDIO</button> -->
@@ -252,7 +249,7 @@
       <path d="M5 11L12 4L19 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     </svg>
   </a>
-  <button id="music-toggle" aria-label="Toggle Background Music" style="position: fixed; bottom: 80px; left: 20px; z-index: 9999!important; background: linear-gradient(45deg, #E31828, #FF5733); color: #fff; width: 60px; height: 60px; border: none; border-radius: 50%; cursor: pointer; font-size: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+  <button id="music-toggle" aria-label="Toggle Background Music" style="position: fixed; bottom: 65px; left: 20px; z-index: 9999!important; background: linear-gradient(45deg, #E31828, #FF5733); color: #fff; width: 50px; height: 50px; border: none; border-radius: 50%; cursor: pointer; font-size: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
     &#9834;
   </button>
   <script>
@@ -281,51 +278,21 @@
       handleVisibility();
       const playlistVideo = document.getElementById("playlist-video");
       const playlistAudio = document.getElementById("playlist-audio");
-      const playlistOverlay = document.getElementById("playlist-overlay");
-      function syncAudio(){ playlistAudio.currentTime = playlistVideo.currentTime; }
-      function updateOverlay(){
-        const btn = document.getElementById("overlay-play-button");
-        btn.innerHTML = playlistVideo.paused ? "&#9658;" : "&#10074;&#10074;";
-      }
-      function togglePlay(){
-        if(playlistVideo.paused){
-          playlistVideo.play().then(()=>{
-            syncAudio();
-            return playlistAudio.play();
-          }).then(()=>{
-            playlistOverlay.style.opacity = "0";
-            playlistOverlay.style.pointerEvents = "none";
-            updateOverlay();
-          }).catch(err=>console.error(err));
-        } else {
-          playlistVideo.pause();
-          playlistAudio.pause();
-          playlistOverlay.style.opacity = "1";
-          playlistOverlay.style.pointerEvents = "auto";
-          updateOverlay();
-        }
-      }
-      if(playlistVideo && playlistAudio && playlistOverlay){
+      if(playlistVideo && playlistAudio){
         playlistVideo.addEventListener("play", function(){
-          syncAudio();
+          playlistAudio.currentTime = playlistVideo.currentTime;
           playlistAudio.play().catch(err=>console.error(err));
-          playlistOverlay.style.opacity = "0";
-          playlistOverlay.style.pointerEvents = "none";
-          updateOverlay();
         });
         playlistVideo.addEventListener("pause", function(){
           playlistAudio.pause();
-          playlistOverlay.style.opacity = "1";
-          playlistOverlay.style.pointerEvents = "auto";
-          updateOverlay();
         });
-        playlistVideo.addEventListener("seeking", function(){ syncAudio(); });
+        playlistVideo.addEventListener("seeking", function(){
+          playlistAudio.currentTime = playlistVideo.currentTime;
+        });
         playlistVideo.addEventListener("timeupdate", function(){
-          if(Math.abs(playlistAudio.currentTime - playlistVideo.currentTime) > 0.3){ syncAudio(); }
-        });
-        playlistOverlay.addEventListener("click", function(e){
-          e.stopPropagation();
-          togglePlay();
+          if(Math.abs(playlistAudio.currentTime - playlistVideo.currentTime) > 0.3){
+            playlistAudio.currentTime = playlistVideo.currentTime;
+          }
         });
       }
       const musicToggle = document.getElementById("music-toggle");
