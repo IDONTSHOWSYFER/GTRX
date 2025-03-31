@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GTRX - We're all GRUM lol</title>
-  <meta name="description" content="A degenerate cat with anger issues." />
-  <link rel="icon" href="/assets/img/data/favicon.png" sizes="16x16" />
-  <link rel="preload" href="/assets/font/Sour_Gummy/static/SourGummy-Black.ttf" as="font" crossorigin type="font/ttf" />
-  <link rel="preload" href="/assets/font/Lacquer/Lacquer-Regular.ttf" as="font" crossorigin type="font/ttf" />
-  <link rel="stylesheet" href="/css/styles.min.css" />
-  <audio id="background-audio" src="/assets/audio/gtrx.wav" preload="auto"></audio>
-  <script>
-    document.addEventListener("DOMContentLoaded", function(){
-      const fadeElements = document.querySelectorAll('.fade-in-element');
-      function handleVisibility(){
-        const triggerPoint = window.innerHeight * 0.8;
-        fadeElements.forEach(el=>{
-          const top = el.getBoundingClientRect().top;
-          if(top < triggerPoint){ el.classList.add('is-visible'); } else { el.classList.remove('is-visible'); }
-        });
-      }
-      window.addEventListener('scroll', handleVisibility);
-      handleVisibility();
-    });
-  </script>
-</head>
-<body>
-  <main>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GTRX - We're all GRUM lol</title>
+    <meta name="description" content="A degenerate cat with anger issues." />
+    <link rel="icon" href="/assets/img/data/favicon.png" sizes="16x16" />
+    <link rel="preload" href="/assets/font/Sour_Gummy/static/SourGummy-Black.ttf" as="font" crossorigin type="font/ttf" />
+    <link rel="preload" href="/assets/font/Lacquer/Lacquer-Regular.ttf" as="font" crossorigin type="font/ttf" />
+    <link rel="stylesheet" href="/css/styles.min.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", function(){
+        const fadeElements = document.querySelectorAll('.fade-in-element');
+        function handleVisibility(){
+          const triggerPoint = window.innerHeight * 0.8;
+          fadeElements.forEach(el=>{
+            const top = el.getBoundingClientRect().top;
+            if(top < triggerPoint){ el.classList.add('is-visible'); } else { el.classList.remove('is-visible'); }
+          });
+        }
+        window.addEventListener('scroll', handleVisibility);
+        handleVisibility();
+      });
+    </script>
+  </head>
+  <body>
     <header class="header">
       <nav class="header__nav">
         <div class="header__logo">
@@ -209,9 +207,8 @@
               <source src="/assets/video/lofi.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <audio id="playlist-audio" src="/assets/audio/lofi.wav" preload="auto"></audio>
           </div>
-          <!-- <button id="studio-button" class="studio-button" onclick="window.location.href='/templates/studio.html'">ENTER THE STUDIO</button> -->
+          <button id="studio-button" class="studio-button" onclick="window.location.href='/templates/studio.html'">ENTER THE STUDIO</button>
         </div>
       </div>
     </section>
@@ -243,20 +240,24 @@
       <a href="/templates/rednote.html" class="rednote">REDNOTE</a>
     </footer>
   </main>
-  <a href="#" class="back-to-top" aria-label="Retour en haut">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <a href="#" class="back-to-top" aria-label="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M12 4V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
       <path d="M5 11L12 4L19 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
     </svg>
   </a>
-  <button id="music-toggle" aria-label="Toggle Background Music" style="position: fixed; bottom: 65px; left: 20px; z-index: 9999!important; background: linear-gradient(45deg, #E31828, #FF5733); color: #fff; width: 50px; height: 50px; border: none; border-radius: 50%; cursor: pointer; font-size: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+  <button id="music-toggle" aria-label="Go to Studio" style="position: fixed; bottom: 65px; left: 20px; z-index: 9999!important; background: linear-gradient(45deg, #E31828, #FF5733); color: #fff; width: 50px; height: 50px; border: none; border-radius: 50%; cursor: pointer; font-size: 24px; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
     &#9834;
   </button>
   <script>
     document.addEventListener("DOMContentLoaded", function(){
       const backToTopButton = document.querySelector('.back-to-top');
       window.addEventListener('scroll', ()=>{
-        if(window.scrollY > 300){ backToTopButton.classList.add('show'); } else { backToTopButton.classList.remove('show'); }
+        if(window.scrollY > 300){
+          backToTopButton.classList.add('show');
+        } else {
+          backToTopButton.classList.remove('show');
+        }
       });
       backToTopButton.addEventListener('click', e=>{
         e.preventDefault();
@@ -271,52 +272,15 @@
         const trigger = window.innerHeight * 0.8;
         fadeElements.forEach(el=>{
           const top = el.getBoundingClientRect().top;
-          if(top < trigger){ el.classList.add('is-visible'); } else { el.classList.remove('is-visible'); }
+          if(top < trigger){
+            el.classList.add('is-visible');
+          } else {
+            el.classList.remove('is-visible');
+          }
         });
       }
       window.addEventListener('scroll', handleVisibility);
       handleVisibility();
-      const playlistVideo = document.getElementById("playlist-video");
-      const playlistAudio = document.getElementById("playlist-audio");
-      if(playlistVideo && playlistAudio){
-        playlistVideo.addEventListener("play", function(){
-          playlistAudio.currentTime = playlistVideo.currentTime;
-          playlistAudio.play().catch(err=>console.error(err));
-        });
-        playlistVideo.addEventListener("pause", function(){
-          playlistAudio.pause();
-        });
-        playlistVideo.addEventListener("seeking", function(){
-          playlistAudio.currentTime = playlistVideo.currentTime;
-        });
-        playlistVideo.addEventListener("timeupdate", function(){
-          if(Math.abs(playlistAudio.currentTime - playlistVideo.currentTime) > 0.3){
-            playlistAudio.currentTime = playlistVideo.currentTime;
-          }
-        });
-      }
-      const musicToggle = document.getElementById("music-toggle");
-      const backgroundAudio = document.getElementById("background-audio");
-      let isBackgroundPlaying = false;
-      if(musicToggle && backgroundAudio){
-        musicToggle.addEventListener("click", function(e){
-          e.preventDefault();
-          e.stopPropagation();
-          if(!isBackgroundPlaying){
-            backgroundAudio.play().then(()=>{
-              isBackgroundPlaying = true;
-              musicToggle.style.background = "#fff";
-              musicToggle.style.color = "#E31828";
-            }).catch(err=>console.error(err));
-          } else {
-            backgroundAudio.pause();
-            isBackgroundPlaying = false;
-            musicToggle.style.background = "linear-gradient(45deg, #E31828, #FF5733)";
-            musicToggle.style.color = "#fff";
-          }
-          return false;
-        });
-      }
     });
   </script>
   <script>
@@ -360,5 +324,18 @@
     });
   </script>
   <script src="/js/script.min.js" async crossorigin></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const musicToggle = document.getElementById("music-toggle");
+      if(musicToggle){
+        musicToggle.addEventListener("click", function(e){
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.href = "/templates/studio.html";
+          return false;
+        });
+      }
+    });
+  </script>
 </body>
 </html>

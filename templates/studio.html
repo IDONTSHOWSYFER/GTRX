@@ -4,145 +4,241 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Studio - GTRX</title>
-    <meta name="description" content="Studio pour déposer et écouter vos musiques" />
-    <link rel="icon" href="/assets/img/data/favicon.png" type="image/x-icon" sizes="16x16" />
+    <meta name="description" content="Studio to upload, listen and share your music" />
+    <link rel="icon" href="/assets/img/data/favicon.png" sizes="16x16" />
+    <link rel="preload" href="/assets/font/Sour_Gummy/static/SourGummy-Black.ttf" as="font" crossorigin type="font/ttf" />
+    <link rel="preload" href="/assets/font/Lacquer/Lacquer-Regular.ttf" as="font" crossorigin type="font/ttf" />
     <link rel="stylesheet" href="/css/studio.min.css" />
-    <!-- Ne lance pas l'audio en autoplay -->
     <audio id="background-audio" src="/assets/audio/gtrx.wav" preload="auto"></audio>
     <script>
-      // Animation d'apparition des éléments au scroll (inchangée)
-      document.addEventListener("DOMContentLoaded", function () {
-          const fadeElements = document.querySelectorAll('.fade-in-element');
-          function handleVisibility() {
-              const triggerPoint = window.innerHeight * 0.8;
-              fadeElements.forEach(element => {
-                  const elementTop = element.getBoundingClientRect().top;
-                  if (elementTop < triggerPoint) {
-                      element.classList.add('is-visible');
-                  } else {
-                      element.classList.remove('is-visible');
-                  }
-              });
-          }
-          window.addEventListener('scroll', handleVisibility);
-          handleVisibility();
+      document.addEventListener("DOMContentLoaded", function(){
+        const fadeElements = document.querySelectorAll('.fade-in-element');
+        function handleVisibility(){
+          const triggerPoint = window.innerHeight * 0.8;
+          fadeElements.forEach(el=>{
+            const top = el.getBoundingClientRect().top;
+            if(top < triggerPoint){ el.classList.add('is-visible'); } else { el.classList.remove('is-visible'); }
+          });
+        }
+        window.addEventListener('scroll', handleVisibility);
+        handleVisibility();
       });
     </script>
   </head>
   <body>
     <header class="studio-header">
       <div class="studio-logo">
-        <img src="/assets/img/data/logo.svg" alt="Logo GTRX">
+        <a href="/index.html">
+          <img src="/assets/img/data/logo.svg" alt="GTRX Logo">
+        </a>
       </div>
       <nav class="studio-nav">
-        <a href="index.html" class="studio-nav-link">Accueil</a>
-        <a href="/templates/integrations.html" class="studio-nav-link">Intégrations</a>
+        <a href="/index.html" class="studio-nav-link">Home</a>
+        <a href="/templates/integrations.html" class="studio-nav-link">Integrations</a>
       </nav>
     </header>
     <main>
       <section class="studio-hero">
         <div class="container">
+          <img src="/assets/img/data/logo.png" alt="Icon" class="title-icon" style="width:100px;">
           <h1 class="studio-title">Studio</h1>
-          <p class="studio-subtitle">Déposez, écoutez et partagez vos musiques</p>
+          <p class="studio-subtitle">Listen and share your music</p>
+          <div class="notes-animation">
+            <span class="note">♪</span>
+            <span class="note">♩</span>
+            <span class="note">♫</span>
+            <span class="note">♬</span>
+            <span class="note">♪</span>
+            <span class="note">♩</span>
+          </div>
         </div>
       </section>
       <section class="studio-tracks">
         <div class="container">
-          <h2 class="tracks-title">Mes Pistes</h2>
+          <img src="/assets/img/data/studio.png" alt="Icon" class="title-icon-small" style="width:150px;">
+          <h2 class="tracks-title">Tracks</h2>
           <div class="tracks-grid">
-            <!-- Exemple de piste -->
             <div class="track-item">
-              <h3 class="track-title">Titre 1</h3>
+              <img src="/assets/img/data/cd.png" alt="Track Icon" class="title-icon-small" style="width:50px;">
+              <h3 class="track-title">GTRX - Anthem Mastered</h3>
               <audio controls>
-                <source src="/assets/audio/sample1.wav" type="audio/wav">
-                Votre navigateur ne supporte pas la balise audio.
+                <source src="/assets/audio/anthem-mastered.wav" type="audio/wav">
+                Your browser does not support the audio element.
               </audio>
             </div>
             <div class="track-item">
-              <h3 class="track-title">Titre 2</h3>
+              <img src="/assets/img/data/cd.png" alt="Track Icon" class="title-icon-small" style="width:50px;">
+              <h3 class="track-title">GTRX - Anthem Alternative</h3>
               <audio controls>
-                <source src="/assets/audio/sample2.wav" type="audio/wav">
-                Votre navigateur ne supporte pas la balise audio.
+                <source src="/assets/audio/anthem-alternative.wav" type="audio/wav">
+                Your browser does not support the audio element.
               </audio>
             </div>
-            <!-- Ajoutez d'autres pistes au besoin -->
+            <div class="track-item">
+              <img src="/assets/img/data/cd.png" alt="Track Icon" class="title-icon-small" style="width:50px;">
+              <h3 class="track-title">GTRX - Black Cat</h3>
+              <audio controls>
+                <source src="/assets/audio/black-cat.m4a" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="track-item">
+              <img src="/assets/img/data/cd.png" alt="Track Icon" class="title-icon-small" style="width:50px;">
+              <h3 class="track-title">GTRX - Chain Ride</h3>
+              <audio controls>
+                <source src="/assets/audio/chain-ride.m4a" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="track-item">
+              <img src="/assets/img/data/cd.png" alt="Track Icon" class="title-icon-small" style="width:50px;">
+              <h3 class="track-title">GTRX - Lazy Cat Gang</h3>
+              <audio controls>
+                <source src="/assets/audio/lazy-cat-gang.wav" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="track-item">
+              <img src="/assets/img/data/cd.png" alt="Track Icon" class="title-icon-small" style="width:50px;">
+              <h3 class="track-title">GTRX - Lightning Fast</h3>
+              <audio controls>
+                <source src="/assets/audio/lightning-fast.m4a" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="track-item">
+              <img src="/assets/img/data/cd.png" alt="Track Icon" class="title-icon-small" style="width:50px;">
+              <h3 class="track-title">GTRX - Revolution</h3>
+              <audio controls>
+                <source src="/assets/audio/revolution.m4a" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="track-item">
+              <img src="/assets/img/data/cd.png" alt="Track Icon" class="title-icon-small" style="width:50px;">
+              <h3 class="track-title">GTRX - Rise Up</h3>
+              <audio controls>
+                <source src="/assets/audio/rise-up.m4a" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="track-item">
+              <img src="/assets/img/data/cd.png" alt="Track Icon" class="title-icon-small" style="width:50px;">
+              <h3 class="track-title">GTRX - Unbreakable</h3>
+              <audio controls>
+                <source src="/assets/audio/unbreakable.m4a" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="track-item">
+              <img src="/assets/img/data/cd.png" alt="Track Icon" class="title-icon-small" style="width:50px;">
+              <h3 class="track-title">GTRX - We Claim Our Name</h3>
+              <audio controls>
+                <source src="/assets/audio/we-claim-our-name.m4a" type="audio/wav">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
           </div>
-        </div>
-      </section>
-      <section class="studio-upload">
-        <div class="container">
-          <h2 class="upload-title">Déposer une nouvelle piste</h2>
-          <form class="upload-form">
-            <label for="track-file">Choisissez un fichier audio</label>
-            <input type="file" id="track-file" accept="audio/*">
-            <button type="submit" class="upload-button">Envoyer</button>
-          </form>
         </div>
       </section>
     </main>
     <footer class="studio-footer">
       <div class="container">
-        <p>© 2023 GTRX. Tous droits réservés.</p>
+        <p>© 2025 GTRX. All rights reserved.</p>
       </div>
     </footer>
-    
-    <!-- Bouton Back-to-Top (bas à droite) -->
-    <a href="#" class="back-to-top" aria-label="Retour en haut">
+    <a href="#" class="back-to-top" aria-label="Back to top">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M12 4V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M5 11L12 4L19 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M12 4V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M5 11L12 4L19 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
     </a>
-    
-    <!-- Bouton musique de fond (bas à gauche) -->
-    <button id="music-toggle" aria-label="Toggle Background Music">
-      &#9834;
-    </button>
-    
     <script>
-      // Bouton back-to-top
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("DOMContentLoaded", function(){
         const backToTopButton = document.querySelector('.back-to-top');
-        window.addEventListener('scroll', () => {
-          if (window.scrollY > 300) {
-            backToTopButton.classList.add('show');
-          } else {
-            backToTopButton.classList.remove('show');
-          }
+        window.addEventListener('scroll', ()=>{
+          if(window.scrollY > 300){ backToTopButton.classList.add('show'); } else { backToTopButton.classList.remove('show'); }
         });
-  
-        backToTopButton.addEventListener('click', (e) => {
+        backToTopButton.addEventListener('click', e=>{
           e.preventDefault();
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       });
     </script>
     <script>
-      // Gestion du bouton musique de fond
-      document.addEventListener("DOMContentLoaded", function() {
+      document.addEventListener("DOMContentLoaded", function(){
+        const fadeElements = document.querySelectorAll('.fade-in-element');
+        function handleVisibility(){
+          const trigger = window.innerHeight * 0.8;
+          fadeElements.forEach(el=>{
+            const top = el.getBoundingClientRect().top;
+            if(top < trigger){ el.classList.add('is-visible'); } else { el.classList.remove('is-visible'); }
+          });
+        }
+        window.addEventListener('scroll', handleVisibility);
+        handleVisibility();
         const musicToggle = document.getElementById("music-toggle");
         const backgroundAudio = document.getElementById("background-audio");
         let isBackgroundPlaying = false;
-        if (musicToggle && backgroundAudio) {
-          musicToggle.addEventListener("click", function(e) {
+        if(musicToggle && backgroundAudio){
+          musicToggle.addEventListener("click", function(e){
             e.preventDefault();
             e.stopPropagation();
-            if (!isBackgroundPlaying) {
-              backgroundAudio.play().then(() => {
+            if(!isBackgroundPlaying){
+              backgroundAudio.play().then(()=>{
                 isBackgroundPlaying = true;
-                // Style quand l'audio est en lecture : fond blanc, icône rouge
                 musicToggle.style.background = "#fff";
                 musicToggle.style.color = "#E31828";
-              }).catch(err => console.error("Erreur lecture audio:", err));
+              }).catch(err=>console.error(err));
             } else {
               backgroundAudio.pause();
               isBackgroundPlaying = false;
-              // Style quand l'audio est arrêté : fond dégradé rouge, icône blanche
               musicToggle.style.background = "linear-gradient(45deg, #E31828, #FF5733)";
               musicToggle.style.color = "#fff";
             }
+            return false;
           });
         }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(){
+        const canvas = document.getElementById('signature-pad');
+        const button = document.getElementById('action-button');
+        const signaturePad = new SignaturePad(canvas, {backgroundColor:'rgba(255,255,255,1)', penColor:'black'});
+        function resizeCanvas(){
+          const ratio = Math.max(window.devicePixelRatio||1,1);
+          canvas.width = canvas.offsetWidth * ratio;
+          canvas.height = canvas.offsetHeight * ratio;
+          canvas.getContext('2d').scale(ratio, ratio);
+          signaturePad.clear();
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        function updateButton(){
+          if(signaturePad.isEmpty()){
+            button.textContent = 'SIGN HERE';
+            button.disabled = true;
+          } else {
+            button.textContent = 'SEND PACT';
+            button.disabled = false;
+          }
+        }
+        canvas.addEventListener('mouseup', updateButton);
+        canvas.addEventListener('touchend', updateButton);
+        canvas.addEventListener('mouseout', updateButton);
+        function openLinks(){
+          const url1 = 'https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq';
+          const url2 = 'https://t.me/grumcoin';
+          window.open(url1,'_blank');
+          setTimeout(()=>{window.open(url2,'_blank');},100);
+        }
+        button.addEventListener('click', function(){
+          if(!signaturePad.isEmpty()) openLinks();
+        });
+        canvas.addEventListener('touchstart', function(e){
+          e.preventDefault();
+        }, {passive:false});
       });
     </script>
     <script src="/js/script.min.js" async crossorigin></script>

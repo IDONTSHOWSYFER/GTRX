@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coming Soon</title>
-  <!-- CSS is located at /Users/syfer/VsCode/Grum/GTRX/css/shop.min.css -->
   <link rel="stylesheet" href="/css/shop.min.css">
-  <link rel="icon" href="/assets/img/data/favicon.png" type="image/x-icon" sizes="16x16" />
-  <!-- Latest version of Font Awesome -->
+  <link rel="icon" href="/assets/img/data/favicon.png" sizes="16x16" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <div class="wrapper">
-    <!-- HEADER: Logo on the left and password form on the top right -->
     <header>
       <div class="header-container">
         <div class="logo">
-          <img src="/assets/img/data/logo.svg" alt="Logo">
+          <a href="/index.html">
+            <img src="/assets/img/data/logo.svg" alt="Logo">
+          </a>
         </div>
         <div class="password-form-container">
           <form class="password-form" action="#" method="post">
@@ -26,8 +25,6 @@
         </div>
       </div>
     </header>
-
-    <!-- MAIN: Central block with message and email form -->
     <main>
       <div class="coming-soon">
         <h1>Opening Soon</h1>
@@ -38,8 +35,6 @@
         </form>
       </div>
     </main>
-
-    <!-- FOOTER: Social icons and "Powered by style" text -->
     <footer>
       <div class="footer-social">
         <a href="https://t.me/grumtrx" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
@@ -53,14 +48,11 @@
     </footer>
   </div>
   <script>
-    // Password form: simulate an error with a shake animation
     document.querySelector('.password-form').addEventListener('submit', function(e) {
       e.preventDefault();
       this.classList.add('shake');
       setTimeout(() => { this.classList.remove('shake'); }, 500);
     });
-    
-    // Email form: redirect to thankyou page on submit
     document.querySelector('.email-form').addEventListener('submit', function(e) {
       e.preventDefault();
       window.location.href = 'thankyou.html';

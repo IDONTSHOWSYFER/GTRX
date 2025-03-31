@@ -1,61 +1,131 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GTRX - Sign a Grumpy Pact</title>
-    <link rel="icon" href="/assets/img/data/favicon.png" type="image/x-icon" sizes="16x16" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/deal.min.css">
-</head>
-
-<body>
+    <link rel="icon" href="/assets/img/data/favicon.png" sizes="16x16" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/deal.min.css" />
+  </head>
+  <body>
     <div class="logo-container">
-        <a href="/index.html">
-            <img src="/assets/img/data/logo.svg" alt="Grumpy Pact Logo" class="logo">
-        </a>
+      <a href="/index.html">
+        <img src="/assets/img/data/logo.svg" alt="Grumpy Pact Logo" class="logo">
+      </a>
     </div>
-
     <div class="container">
-        <a href="/templates/integrations.html" class="back-arrow" title="Retour">
-            <i class="fas fa-arrow-left" aria-hidden="true"></i>
-            <span class="sr-only">Retour</span>
-        </a>
-        <h2 class="main-title">MAKE A DEAL</h2>
-        <div id="signature-container">
-            <canvas id="signature-pad" aria-label="Signature Pad"></canvas>
-        </div>
-        <button id="action-button" disabled>SIGN HERE</button>
+      <a href="/templates/integrations.html" class="back-arrow" title="Retour">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        <span class="sr-only">Retour</span>
+      </a>
+      <h2 class="main-title">MAKE A DEAL</h2>
+      <div id="signature-container">
+        <canvas id="signature-pad" aria-label="Signature Pad"></canvas>
+      </div>
+      <button id="action-button" disabled>SIGN HERE</button>
     </div>
-
     <section class="socials">
-        <div class="socials__container">
-            <h2 class="socials__title">SOCIALS</h2>
-            <p class="socials__description">JOIN THE GRUMPY CULT !</p>
-            <div class="socials__links">
-                <a href="https://x.com/grumtrx" target="_blank" class="socials__link" aria-label="Twitter">
-                    <img src="/assets/img/integrations/featured/x.svg" alt="Twitter Icon" class="socials__icon" />
-                </a>
-                <a href="https://t.me/grumtrx" target="_blank" class="socials__link" aria-label="Telegram">
-                    <img src="/assets/img/integrations/featured/telegram.svg" alt="Telegram Icon" class="socials__icon" />
-                </a>
-                <a href="https://www.instagram.com/grumcointrx" target="_blank" class="socials__link" aria-label="Instagram">
-                    <img src="/assets/img/integrations/featured/instagram.svg" alt="Instagram Icon" class="socials__icon" />
-                </a>
-                <a href="https://linktr.ee/grumtrx" target="_blank" class="socials__link" aria-label="Linktree">
-                    <img src="/assets/img/integrations/featured/linktree.svg" alt="Linktree Icon" class="socials__icon" />
-                </a>
-            </div>
+      <div class="socials__container">
+        <h2 class="socials__title">SOCIALS</h2>
+        <p class="socials__description">JOIN THE GRUMPY CULT !</p>
+        <div class="socials__links">
+          <a href="https://x.com/grumtrx" target="_blank" class="socials__link" aria-label="Twitter">
+            <img src="/assets/img/integrations/featured/x.svg" alt="Twitter Icon" class="socials__icon" />
+          </a>
+          <a href="https://t.me/grumtrx" target="_blank" class="socials__link" aria-label="Telegram">
+            <img src="/assets/img/integrations/featured/telegram.svg" alt="Telegram Icon" class="socials__icon" />
+          </a>
+          <a href="https://www.instagram.com/grumcointrx" target="_blank" class="socials__link" aria-label="Instagram">
+            <img src="/assets/img/integrations/featured/instagram.svg" alt="Instagram Icon" class="socials__icon" />
+          </a>
+          <a href="https://linktr.ee/grumtrx" target="_blank" class="socials__link" aria-label="Linktree">
+            <img src="/assets/img/integrations/featured/linktree.svg" alt="Linktree Icon" class="socials__icon" />
+          </a>
         </div>
+      </div>
     </section>
-
     <footer class="footer">
-        <a href="/templates/rednote.html" class="rednote">REDNOTE</a>
+      <a href="/templates/rednote.html" class="rednote">REDNOTE</a>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const fadeElements = document.querySelectorAll('.fade-in-element');
+        function handleVisibility() {
+          const triggerPoint = window.innerHeight * 0.8;
+          fadeElements.forEach(function(element) {
+            const elementTop = element.getBoundingClientRect().top;
+            if (elementTop < triggerPoint) {
+              element.classList.add('is-visible');
+            } else {
+              element.classList.remove('is-visible');
+            }
+          });
+        }
+        window.addEventListener('scroll', handleVisibility);
+        handleVisibility();
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const canvas = document.getElementById('signature-pad');
+        const button = document.getElementById('action-button');
+        const signaturePad = new SignaturePad(canvas, {
+          backgroundColor: 'rgba(255, 255, 255, 1)',
+          penColor: 'black'
+        });
+        function resizeCanvas() {
+          const ratio = Math.max(window.devicePixelRatio || 1, 1);
+          canvas.width = canvas.offsetWidth * ratio;
+          canvas.height = canvas.offsetHeight * ratio;
+          canvas.getContext('2d').scale(ratio, ratio);
+          signaturePad.clear();
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+        function updateButton() {
+          if (signaturePad.isEmpty()) {
+            button.textContent = 'SIGN HERE';
+            button.disabled = true;
+          } else {
+            button.textContent = 'SEND PACT';
+            button.disabled = false;
+          }
+        }
+        canvas.addEventListener('mouseup', updateButton);
+        canvas.addEventListener('touchend', updateButton);
+        canvas.addEventListener('mouseout', updateButton);
+        function openLinks() {
+          const url1 = 'https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq';
+          const url2 = 'https://t.me/grumtrx';
+          window.open(url1, '_blank');
+          setTimeout(function() {
+            window.open(url2, '_blank');
+          }, 100);
+        }
+        button.addEventListener('click', function() {
+          if (!signaturePad.isEmpty()) {
+            openLinks();
+          }
+        });
+        canvas.addEventListener('touchstart', function(e) {
+          e.preventDefault();
+        }, { passive: false });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const musicToggle = document.getElementById("music-toggle");
+        if (musicToggle) {
+          musicToggle.addEventListener("click", function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = "/templates/studio.html";
+          });
+        }
+      });
+    </script>
     <script src="/js/script.min.js" async crossorigin></script>
-</body>
-
+  </body>
 </html>
