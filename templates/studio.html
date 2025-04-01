@@ -10,20 +10,6 @@
     <link rel="preload" href="/assets/font/Lacquer/Lacquer-Regular.ttf" as="font" crossorigin type="font/ttf" />
     <link rel="stylesheet" href="/css/studio.min.css" />
     <audio id="background-audio" src="/assets/audio/gtrx.wav" preload="auto"></audio>
-    <script>
-      document.addEventListener("DOMContentLoaded", function(){
-        const fadeElements = document.querySelectorAll('.fade-in-element');
-        function handleVisibility(){
-          const triggerPoint = window.innerHeight * 0.8;
-          fadeElements.forEach(el=>{
-            const top = el.getBoundingClientRect().top;
-            if(top < triggerPoint){ el.classList.add('is-visible'); } else { el.classList.remove('is-visible'); }
-          });
-        }
-        window.addEventListener('scroll', handleVisibility);
-        handleVisibility();
-      });
-    </script>
   </head>
   <body>
     <header class="studio-header">
@@ -40,7 +26,7 @@
     <main>
       <section class="studio-hero">
         <div class="container">
-          <img src="/assets/img/data/logo.png" alt="Icon" class="title-icon" style="width:100px;">
+          <img src="/assets/img/data/logo.png" alt="Icon" class="title-icon">
           <h1 class="studio-title">Studio</h1>
           <p class="studio-subtitle">Listen and share your music</p>
           <div class="notes-animation">
@@ -169,94 +155,56 @@
         <path d="M5 11L12 4L19 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
     </a>
+
     <script>
       document.addEventListener("DOMContentLoaded", function(){
         const backToTopButton = document.querySelector('.back-to-top');
-        window.addEventListener('scroll', ()=>{
-          if(window.scrollY > 300){ backToTopButton.classList.add('show'); } else { backToTopButton.classList.remove('show'); }
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            backToTopButton.classList.add('show');
+          } else {
+            backToTopButton.classList.remove('show');
+          }
         });
-        backToTopButton.addEventListener('click', e=>{
+        backToTopButton.addEventListener('click', e => {
           e.preventDefault();
           window.scrollTo({ top: 0, behavior: 'smooth' });
         });
       });
     </script>
+
     <script>
       document.addEventListener("DOMContentLoaded", function(){
         const fadeElements = document.querySelectorAll('.fade-in-element');
         function handleVisibility(){
           const trigger = window.innerHeight * 0.8;
-          fadeElements.forEach(el=>{
+          fadeElements.forEach(el => {
             const top = el.getBoundingClientRect().top;
-            if(top < trigger){ el.classList.add('is-visible'); } else { el.classList.remove('is-visible'); }
+            if (top < trigger) {
+              el.classList.add('is-visible');
+            } else {
+              el.classList.remove('is-visible');
+            }
           });
         }
         window.addEventListener('scroll', handleVisibility);
         handleVisibility();
-        const musicToggle = document.getElementById("music-toggle");
-        const backgroundAudio = document.getElementById("background-audio");
-        let isBackgroundPlaying = false;
-        if(musicToggle && backgroundAudio){
-          musicToggle.addEventListener("click", function(e){
-            e.preventDefault();
-            e.stopPropagation();
-            if(!isBackgroundPlaying){
-              backgroundAudio.play().then(()=>{
-                isBackgroundPlaying = true;
-                musicToggle.style.background = "#fff";
-                musicToggle.style.color = "#E31828";
-              }).catch(err=>console.error(err));
-            } else {
-              backgroundAudio.pause();
-              isBackgroundPlaying = false;
-              musicToggle.style.background = "linear-gradient(45deg, #E31828, #FF5733)";
-              musicToggle.style.color = "#fff";
+
+        const allAudios = document.querySelectorAll('audio');
+        let currentAudio = null;
+
+        allAudios.forEach(audio => {
+          audio.addEventListener('play', () => {
+            if (currentAudio && currentAudio !== audio) {
+              currentAudio.pause();
+              currentAudio.currentTime = 0;
             }
-            return false;
+            currentAudio = audio;
           });
-        }
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function(){
-        const canvas = document.getElementById('signature-pad');
-        const button = document.getElementById('action-button');
-        const signaturePad = new SignaturePad(canvas, {backgroundColor:'rgba(255,255,255,1)', penColor:'black'});
-        function resizeCanvas(){
-          const ratio = Math.max(window.devicePixelRatio||1,1);
-          canvas.width = canvas.offsetWidth * ratio;
-          canvas.height = canvas.offsetHeight * ratio;
-          canvas.getContext('2d').scale(ratio, ratio);
-          signaturePad.clear();
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-        function updateButton(){
-          if(signaturePad.isEmpty()){
-            button.textContent = 'SIGN HERE';
-            button.disabled = true;
-          } else {
-            button.textContent = 'SEND PACT';
-            button.disabled = false;
-          }
-        }
-        canvas.addEventListener('mouseup', updateButton);
-        canvas.addEventListener('touchend', updateButton);
-        canvas.addEventListener('mouseout', updateButton);
-        function openLinks(){
-          const url1 = 'https://sunpump.meme/token/TPmPPtsiqHoNPT1XHpudt3L6VAwyuVJ1Sq';
-          const url2 = 'https://t.me/grumcoin';
-          window.open(url1,'_blank');
-          setTimeout(()=>{window.open(url2,'_blank');},100);
-        }
-        button.addEventListener('click', function(){
-          if(!signaturePad.isEmpty()) openLinks();
         });
-        canvas.addEventListener('touchstart', function(e){
-          e.preventDefault();
-        }, {passive:false});
       });
     </script>
+
     <script src="/js/script.min.js" async crossorigin></script>
   </body>
 </html>
