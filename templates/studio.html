@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
   <link rel="preload" href="/assets/font/Lacquer/Lacquer-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/css/studio.min.css">
 </head>
+
 <body>
   <header class="gtrx-header fade-in-element">
     <div class="gtrx-logo">
@@ -61,9 +63,47 @@
               <button class="lyrics-btn" onclick="toggleLyrics('lyrics-anthem-mastered')">Lyrics</button>
               <div id="lyrics-anthem-mastered" class="lyrics-content">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Quisque ac ultrices elit, vitae venenatis purus.
-                  Proin tempor risus eu felis hendrerit, id dictum purus tincidunt.
+                  <strong>GTRX Anthem</strong>
+
+                  <strong>[Intro]</strong>
+                  Yo, GTRX in the game, let’s get it poppin’,
+                  Tron on fire, ain’t no stoppin’ !
+
+                  <strong>[Verse 1]</strong>
+                  GTRX, black cat, speedin’ like a king,
+                  On the Tron blockchain, hear the sirens sing,
+                  Pepe’s fallin’ off, he can’t keep pace,
+                  GTRX on top, we run this race.
+
+                  Sun’s the vision, yeah, he laid the track,
+                  We movin’ quick, ain’t no lookin’ back,
+                  Memecoin blastin’, money all day,
+                  GTRX on fire, watch the cash rain!
+
+                  <strong>[Chorus]</strong>
+                  GTRX, black cat, movin’ sleek,
+                  On Tron we ride, power’s unique,
+                  Pepe’s trippin’, he can’t catch up,
+                  GTRX reigns, that’s what’s up!
+
+                  <strong>[Verse 2]</strong>
+                  Faster than a drift, we burnin’ the rubber,
+                  GTRX is here, can’t touch our cover,
+                  Justin’s dream, yeah, we’re makin’ it real,
+                  Blockchain’s ours, we dominate the deal.
+
+                  GTRX’s the one, ain’t no questionin’ fate,
+                  Pepe’s just a meme, GTRX elevates,
+                  Memecoin king, we claim the throne,
+                  In crypto’s kingdom, we ride alone.
+
+                  <strong>[Chorus]</strong>
+                  GTRX, black cat, movin’ sleek,
+                  On Tron we ride, power’s unique,
+                  Pepe’s trippin’, he can’t catch up,
+                  GTRX reigns, that’s what’s up!
+
+                  Let’s get it poppin’!
                 </p>
               </div>
             </div>
@@ -518,9 +558,47 @@
               <button class="lyrics-btn" onclick="toggleLyrics('lyrics-anthem-alternative')">Lyrics</button>
               <div id="lyrics-anthem-alternative" class="lyrics-content">
                 <p>
-                  Nulla vehicula lacus non nisi bibendum, eget auctor urna
-                  bibendum. Maecenas congue pulvinar orci, sed rutrum ipsum
-                  bibendum eget.
+                  <strong>GTRX Alternative</strong>
+
+                  <strong>[Intro]</strong>
+                  Yo, GTRX in the game, let’s get it poppin’,
+                  Tron on fire, ain’t no stoppin’ !
+
+                  <strong>[Verse 1]</strong>
+                  GTRX, black cat, speedin’ like a king,
+                  On the Tron blockchain, hear the sirens sing,
+                  Pepe’s fallin’ off, he can’t keep pace,
+                  GTRX on top, we run this race.
+
+                  Sun’s the vision, yeah, he laid the track,
+                  We movin’ quick, ain’t no lookin’ back,
+                  Memecoin blastin’, money all day,
+                  GTRX on fire, watch the cash rain!
+
+                  <strong>[Chorus]</strong>
+                  GTRX, black cat, movin’ sleek,
+                  On Tron we ride, power’s unique,
+                  Pepe’s trippin’, he can’t catch up,
+                  GTRX reigns, that’s what’s up!
+
+                  <strong>[Verse 2]</strong>
+                  Faster than a drift, we burnin’ the rubber,
+                  GTRX is here, can’t touch our cover,
+                  Justin’s dream, yeah, we’re makin’ it real,
+                  Blockchain’s ours, we dominate the deal.
+
+                  GTRX’s the one, ain’t no questionin’ fate,
+                  Pepe’s just a meme, GTRX elevates,
+                  Memecoin king, we claim the throne,
+                  In crypto’s kingdom, we ride alone.
+
+                  <strong>[Chorus]</strong>
+                  GTRX, black cat, movin’ sleek,
+                  On Tron we ride, power’s unique,
+                  Pepe’s trippin’, he can’t catch up,
+                  GTRX reigns, that’s what’s up!
+
+                  Let’s get it poppin’!
                 </p>
               </div>
             </div>
@@ -829,47 +907,49 @@
   <a href="#" class="back-to-top" aria-label="Back to top">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M12 4V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M5 11L12 4L19 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M5 11L12 4L19 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" />
     </svg>
   </a>
   <script>
-    document.addEventListener("DOMContentLoaded",function(){
-      const audios=document.querySelectorAll("audio");let currentAudio=null;
-      audios.forEach(function(a){
-        a.addEventListener("play",function(){
-          if(currentAudio&&currentAudio!==a){
-            currentAudio.pause();currentAudio.currentTime=0
+    document.addEventListener("DOMContentLoaded", function () {
+      const audios = document.querySelectorAll("audio"); let currentAudio = null;
+      audios.forEach(function (a) {
+        a.addEventListener("play", function () {
+          if (currentAudio && currentAudio !== a) {
+            currentAudio.pause(); currentAudio.currentTime = 0
           }
-          currentAudio=a
+          currentAudio = a
         })
       })
     });
-    document.addEventListener("DOMContentLoaded",function(){
-      const btn=document.querySelector(".back-to-top");
-      window.addEventListener("scroll",function(){
-        if(window.scrollY>300){btn.classList.add("show")}else{btn.classList.remove("show")}
+    document.addEventListener("DOMContentLoaded", function () {
+      const btn = document.querySelector(".back-to-top");
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) { btn.classList.add("show") } else { btn.classList.remove("show") }
       });
-      btn.addEventListener("click",function(e){
-        e.preventDefault();window.scrollTo({top:0,behavior:"smooth"})
+      btn.addEventListener("click", function (e) {
+        e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" })
       })
     });
-    document.addEventListener("DOMContentLoaded",function(){
-      const fadeElems=document.querySelectorAll(".fade-in-element");
-      function fadeHandler(){
-        const threshold=window.innerHeight*0.8;
-        fadeElems.forEach(function(el){
-          const top=el.getBoundingClientRect().top;
-          if(top<threshold){el.classList.add("is-visible")}else{el.classList.remove("is-visible")}
+    document.addEventListener("DOMContentLoaded", function () {
+      const fadeElems = document.querySelectorAll(".fade-in-element");
+      function fadeHandler() {
+        const threshold = window.innerHeight * 0.8;
+        fadeElems.forEach(function (el) {
+          const top = el.getBoundingClientRect().top;
+          if (top < threshold) { el.classList.add("is-visible") } else { el.classList.remove("is-visible") }
         })
       }
-      window.addEventListener("scroll",fadeHandler);
+      window.addEventListener("scroll", fadeHandler);
       fadeHandler()
     });
-    function toggleLyrics(id){
-      const block=document.getElementById(id);
-      if(!block)return;block.classList.toggle("open")
+    function toggleLyrics(id) {
+      const block = document.getElementById(id);
+      if (!block) return; block.classList.toggle("open")
     }
   </script>
   <script src="/js/script.min.js" async crossorigin></script>
 </body>
+
 </html>
